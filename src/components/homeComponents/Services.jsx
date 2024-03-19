@@ -77,7 +77,10 @@ const Services = ({ service, button }) => {
               </Typography>
               {button && (
                 <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-                  <CustomButton btnText={service.btnText} to="/contact-us" />
+                  <CustomButton
+                    btnText={service.btnText}
+                    to={service.destination}
+                  />
                 </Box>
               )}
             </Box>

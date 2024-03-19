@@ -39,7 +39,8 @@ const ResponsiveNavBar = (props) => {
 
   useEffect(() => {
     const pathname = router.pathname;
-    const cleanedLocation = pathname.replace("/", "");
+    const cleanedLocation =
+      pathname === "/" ? "home" : pathname.replace("/", "");
 
     // Check if the pathname includes "/blog"
     const isBlogPage = pathname.includes("/blog");
@@ -50,7 +51,7 @@ const ResponsiveNavBar = (props) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} component={Link} href="/">
         <CardMedia
           component="img"
           image="/images/logo.png"
@@ -113,7 +114,7 @@ const ResponsiveNavBar = (props) => {
         }}
       >
         <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1 }} component={Link} href="/">
             <CardMedia
               component="img"
               image="/images/logo.png"

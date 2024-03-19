@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
     "framer-motion": "^11.0.14",

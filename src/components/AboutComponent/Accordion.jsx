@@ -6,7 +6,6 @@ import { alpha } from "@mui/system";
 import { FAQs } from "../../data/aboutUs";
 import {
   Box,
-  //   Accordion,
   AccordionSummary,
   AccordionDetails,
   Typography,

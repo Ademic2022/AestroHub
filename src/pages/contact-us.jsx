@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Box,
@@ -8,17 +7,16 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-// import {
-//   nameValidator,
-//   emailValidator,
-//   textFieldValidator,
-//   numberValidator,
-// } from "../utils/formValidator";
 import { alpha } from "@mui/material";
 import { useForm } from "react-hook-form";
 import Section7 from "@/components/homeComponents/Section7";
-import { emailValidator, nameValidator, numberValidator, textFieldValidator } from "@/utils/formValidator";
-// import Section7 from "../components/homeComponents/Section7";
+import {
+  emailValidator,
+  nameValidator,
+  numberValidator,
+  textFieldValidator,
+} from "@/utils/formValidator";
+import Link from "next/link";
 
 const ContactUs = () => {
   const [loading, setLoading] = React.useState(false);
@@ -26,16 +24,11 @@ const ContactUs = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
-    setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
-
-    setLoading(false);
-    reset()
+  const onSubmit = async (value) => {
+   console.log(value);
   };
   return (
     <React.Fragment>
@@ -65,7 +58,13 @@ const ContactUs = () => {
           >
             Kindly provide us a few details below and we will be in touch
             shortly.. or schedule a call with us on{" "}
-            <Box component="span" color="#B4811C">
+            <Box
+              component={Link}
+              href="https://calendly.com/aestrohub"
+              target="_blank"
+              color="#B4811C"
+              sx={{ textDecoration: "none" }}
+            >
               Calendly
             </Box>
           </Typography>

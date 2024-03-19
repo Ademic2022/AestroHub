@@ -75,7 +75,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
         mb={1}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <CustomButton btnText="Explore our station" />
+        <CustomButton to="/services" btnText="Explore our station" />
       </Box>
     </React.Fragment>
   );

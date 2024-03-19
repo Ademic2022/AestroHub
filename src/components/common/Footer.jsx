@@ -15,6 +15,8 @@ import Socials from "./footerComponents/Socials";
 import { emailValidator } from "@/utils/formValidator";
 
 const Footer = () => {
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
   const {
     register,
     handleSubmit,
@@ -22,8 +24,25 @@ const Footer = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const onSubmit = async (value) => {
+    const email = value.email;
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setMessage("Successfully subscribed to newsletter!");
+      } else {
+        setMessage(data.error || "Failed to subscribe to newsletter.");
+      }
+    } catch (error) {
+      setMessage("Failed to subscribe to newsletter.");
+    }
   };
 
   return (

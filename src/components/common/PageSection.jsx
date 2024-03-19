@@ -3,7 +3,7 @@ import { Box, Typography, CardMedia } from "@mui/material";
 import CustomButton from "./CustomButton";
 
 const PageSection = ({ sectionDetails, button }) => {
-  const { title, subtitle, btnText, img, config } = sectionDetails;
+  const { title, subtitle, btnText, img, config, destination } = sectionDetails;
   return (
     <React.Fragment>
       <Box
@@ -32,7 +32,7 @@ const PageSection = ({ sectionDetails, button }) => {
         </Typography>
         {button && (
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <CustomButton btnText={btnText} />
+            <CustomButton to={destination} btnText={btnText} />
           </Box>
         )}
       </Box>
