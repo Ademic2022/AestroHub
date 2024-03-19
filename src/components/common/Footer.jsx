@@ -3,6 +3,7 @@ import {
   Box,
   Container,
   Grid,
+  CircularProgress,
   Typography,
   TextField,
   Button,
@@ -13,10 +14,13 @@ import Services from "./footerComponents/Services";
 import Products from "./footerComponents/Products";
 import Socials from "./footerComponents/Socials";
 import { emailValidator } from "@/utils/formValidator";
+import CustomToast from "./CustomToast";
 
 const Footer = () => {
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [message, setMessage] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+
   const {
     register,
     handleSubmit,
@@ -25,6 +29,7 @@ const Footer = () => {
   } = useForm();
 
   const onSubmit = async (value) => {
+    setLoading(true);
     const email = value.email;
     try {
       const response = await fetch("/api/newsletter", {
@@ -35,15 +40,29 @@ const Footer = () => {
         body: JSON.stringify({ email }),
       });
       const data = await response.json();
-      if (response.ok) {
-        setMessage("Successfully subscribed to newsletter!");
-      } else {
-        setMessage(data.error || "Failed to subscribe to newsletter.");
-      }
+      setMessage(
+        response.ok
+          ? "Successfully subscribed to newsletter!"
+          : data.error || "Failed to subscribe to newsletter."
+      );
+      setOpen(true);
+      reset();
     } catch (error) {
       setMessage("Failed to subscribe to newsletter.");
+      setOpen(true);
+    } finally {
+      setLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    if (open) {
+      const timeoutId = setTimeout(() => {
+        setOpen(false);
+      }, 5000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [open]);
 
   return (
     <React.Fragment>
@@ -119,8 +138,17 @@ const Footer = () => {
                   <TextField
                     sx={{
                       width: { xs: "100%", md: "70%" },
-                      border: "1px solid #5c5c5c",
-                      borderRadius: "16px",
+                      "& .MuiInputBase-input": {
+                        color: "#ffffff",
+                        letterSpacing: "2px",
+                      },
+                      "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline":
+                        {
+                          borderColor: "#5c5c5c", // Set the outline color to 5c5c5c
+                        },
+                      "& .MuiInputLabel-root": {
+                        color: "#ffffff", // Set the label color to white
+                      },
                     }}
                     {...register("email", emailValidator)}
                     error={!!errors.email}
@@ -133,10 +161,12 @@ const Footer = () => {
                     variant="contained"
                     size="large"
                     type="submit"
-                    sx={{ borderRadius: "16px" }}
+                    sx={{ borderRadius: "16px", border: "1px solid #5c5c5c" }}
+                    disabled={loading}
                   >
-                    Subscribe
+                    {loading ? <CircularProgress size={24} /> : "Subscribe"}
                   </Button>
+                  <CustomToast open={open} message={message} />
                 </Grid>
               </Grid>
             </Box>
