@@ -135,29 +135,29 @@ const FullWidthSlider = () => {
                         variant="customBody"
                         color="#fff"
                         textAlign="left"
+                        sx={{ fontSize: { xs: 17, md: 22 } }}
                       >
                         Damilare Alabi
                       </Typography>
                     }
                     secondary={
-                      <Box
+                      <Typography
+                        pl={1}
                         sx={{
+                          textAlign: "left",
                           display: "flex",
                           alignItems: "center",
+                          justifyContent: "flex-start",
+                          gap: 1,
+                          fontSize: { xs: 15, md: 20 },
                           color: "grey.lightActive",
                         }}
                       >
-                        <FaCalendarAlt />
-                        <Typography
-                          pl={1}
-                          sx={{
-                            fontSize: { xs: 15, md: 20 },
-                            color: "grey.lightActive",
-                          }}
-                        >
-                          12 sep 2021
-                        </Typography>
-                      </Box>
+                        <span style={{ marginTop: "5px" }}>
+                          <FaCalendarAlt />
+                        </span>
+                        <span>12 sep 2021</span>
+                      </Typography>
                     }
                   />
                 </ListItem>

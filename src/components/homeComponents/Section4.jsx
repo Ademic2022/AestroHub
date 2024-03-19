@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip, Grid, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Section4 = () => {
   return (
@@ -102,7 +102,7 @@ const Section4 = () => {
                 <Button
                   variant="outlined"
                   component={Link}
-                  to="/contact-us"
+                  href="/contact-us"
                   tabIndex={-1}
                   startIcon={
                     <CardMedia
@@ -177,7 +177,7 @@ const Section4 = () => {
                 <Button
                   variant="outlined"
                   component={Link}
-                  to="/contact-us"
+                  href="/contact-us"
                   tabIndex={-1}
                   startIcon={
                     <CardMedia

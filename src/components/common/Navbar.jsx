@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { alpha } from "@mui/system";
-import { Link, useLocation } from "react-router-dom";
-import { navItems } from "../../data/navlinks";
-import NavTracker from "../../utils/NavTracker";
-import { listVariants, itemVariants } from "../../data/motionProps/navbar";
+import Link from "next/link";
 import {
   AppBar,
   Container,
@@ -22,6 +19,10 @@ import {
   List,
   IconButton,
 } from "@mui/material";
+import { useRouter } from "next/router";
+import NavTracker from "@/utils/NavTracker";
+import { navItems } from "@/data/navlinks";
+import { itemVariants, listVariants } from "@/data/motionProps/navbar";
 
 const drawerWidth = 240;
 
@@ -29,14 +30,15 @@ const ResponsiveNavBar = (props) => {
   const { window } = props;
   const [activeButton, setActiveButton] = React.useState(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const router = useRouter();
+
   useEffect(() => {
-    const pathname = location.pathname;
+    const pathname = router.pathname;
     const cleanedLocation = pathname.replace("/", "");
 
     // Check if the pathname includes "/blog"
@@ -44,7 +46,7 @@ const ResponsiveNavBar = (props) => {
 
     // If it's a blog page, set the activeButton to "blog"
     setActiveButton(isBlogPage ? "blog" : cleanedLocation);
-  }, [location]);
+  }, [router.pathname]);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -79,7 +81,11 @@ const ResponsiveNavBar = (props) => {
                 m: 0.5,
               }}
               component={Link}
-              to={`/${item.trim().toLowerCase().replace(/\s+/g, "-")}`}
+              href={
+                item.trim().toLowerCase() === "home"
+                  ? "/"
+                  : `/${item.trim().toLowerCase().replace(/\s+/g, "-")}`
+              }
             >
               <ListItemText primary={item} />
             </ListItemButton>
@@ -153,16 +159,19 @@ const ResponsiveNavBar = (props) => {
                   .trim()
                   .toLowerCase()
                   .replace(/\s+/g, "-");
+
+                const destination =
+                  cleanedItem === "home" ? "/" : `/${cleanedItem}`;
                 return (
                   <Box
+                    key={cleanedItem}
                     component={motion.div}
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300, damping: 10 }}
                   >
                     <Button
-                      key={cleanedItem}
                       component={Link}
-                      to={`/${cleanedItem}`}
+                      href={destination}
                       sx={{
                         color: "#fff",
                         bgcolor:

@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Typography, CardMedia, Chip } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Services from "./Services";
-import { services } from "../../data/services";
+import { services } from "@/data/services";
 import ServiceCard from "./ServiceCard";
-import { responsive } from "../../data/CarouselResponsive";
+import { responsive } from "@/data/CarouselResponsive";
+import Services from "./Services";
 
 const Section3 = () => {
   return (

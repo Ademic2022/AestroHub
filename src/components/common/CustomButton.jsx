@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, CardMedia, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const CustomButton = ({ icon, btnText, to }) => {
   return (
@@ -13,7 +13,7 @@ const CustomButton = ({ icon, btnText, to }) => {
         variant="outlined"
         tabIndex={-1}
         component={Link}
-        to={to}
+        href={to ? to : "/"}
         startIcon={
           <CardMedia
             component="img"

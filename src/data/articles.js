@@ -102,3 +102,9 @@ export const featProps = {
   label: "Aestro Products",
   color: "#0EAD69",
 };
+
+export const homeProps = {
+  sectionHeader: "Read Our Latest Articles",
+  label: "AestroBlog",
+  color: "#0EAD69",
+};

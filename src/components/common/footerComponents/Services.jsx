@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip } from "@mui/material";
-import { services } from "../../../data/services";
+import { services } from "@/data/services";
 
 const Services = () => {
   return (
@@ -29,8 +29,8 @@ const Services = () => {
           mb={3}
           variant="body"
           sx={{
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: { xs: "20px", md: "28px" },
-            textAlign: "left",
             color: "grey.lightActive",
           }}
         >

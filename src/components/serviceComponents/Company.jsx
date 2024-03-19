@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Typography, CardMedia, Button } from "@mui/material";
 import Marquee from "react-marquee-slider";
-import { companies } from "../../data/companies";
 import CustomButton from "../common/CustomButton";
+import { companies } from "@/data/companies";
 
 const Company = () => {
   return (

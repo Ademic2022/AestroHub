@@ -3,9 +3,9 @@ import { Box, Typography, CardMedia, Chip } from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Services from "../homeComponents/Services";
-import { padservices } from "../../data/services";
+import { responsive } from "@/data/CarouselResponsive";
 import ServiceCard from "../homeComponents/ServiceCard";
-import { responsive } from "../../data/CarouselResponsive";
+import { padservices } from "@/data/services";
 
 const LaunchPadServices = ({ slider }) => {
   return (

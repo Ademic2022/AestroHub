@@ -28,33 +28,42 @@ const BlogDetailsChild = () => {
           <ListItemText
             sx={{ pl: 3 }}
             primary={
-              <Typography variant="customBody" color="#fff" textAlign="left">
+              <Typography
+                variant="customBody"
+                color="#fff"
+                textAlign="left"
+                sx={{ fontSize: { xs: 17, md: 22 } }}
+              >
                 Damilare Alabi
               </Typography>
             }
             secondary={
-              <Box
+              <Typography
+                pl={1}
                 sx={{
+                  textAlign: "left",
                   display: "flex",
                   alignItems: "center",
-                  color: "grey.lightActive",
+                  justifyContent: "flex-start",
+                  gap: 1,
+                  fontSize: { xs: 15, md: 20 },
+                  color: "grey.normal",
                 }}
               >
-                <FaCalendarAlt />
-                <Typography
-                  pl={1}
-                  sx={{
-                    fontSize: { xs: 15, md: 20 },
-                    color: "grey.lightActive",
-                  }}
-                >
-                  12 sep 2021
-                </Typography>
-              </Box>
+                <span style={{ marginTop: "5px" }}>
+                  <FaCalendarAlt />
+                </span>
+                <span>12 sep 2021</span>
+              </Typography>
             }
           />
         </ListItem>
-        <Typography my={2} variant="h2" textAlign="left">
+        <Typography
+          my={2}
+          variant="h2"
+          textAlign="left"
+          sx={{ fontSize: { xs: "35px", md: "80px" } }}
+        >
           10 tokens that will boom in the next bull run
         </Typography>
         <CardMedia

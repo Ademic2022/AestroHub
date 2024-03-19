@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Card from "../common/Card";
-import { writings } from "../../data/services";
+import { writings } from "@/data/services";
 
 const Writing = () => {
   return (

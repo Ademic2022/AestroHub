@@ -9,11 +9,10 @@ import {
   CardMedia,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import Services from "./footerComponents/Services";
 import Products from "./footerComponents/Products";
 import Socials from "./footerComponents/Socials";
-import { emailValidator } from "../../utils/formValidator";
+import { emailValidator } from "@/utils/formValidator";
 
 const Footer = () => {
   const {
@@ -26,14 +25,15 @@ const Footer = () => {
   const onSubmit = async (data) => {
     console.log(data);
   };
+
   return (
     <React.Fragment>
       <Container maxWidth="xl" sx={{ p: 3 }}>
         <Box
           sx={{
             position: "relative",
-            // height: "1345px",
             backgroundSize: "cover",
+            color: "#fff",
           }}
         >
           <Box
@@ -42,7 +42,6 @@ const Footer = () => {
               justifyContent: "space-around",
               flexDirection: { xs: "column", md: "row" },
               alignItems: "flex-start",
-              // zIndex: 99999,
             }}
           >
             <Services />
@@ -59,7 +58,6 @@ const Footer = () => {
             width={{ xs: "max-width", md: "1280px" }}
             sx={{
               height: "256px",
-
               border: "1px solid #5c5c5c",
               borderRadius: "24px",
               overflowX: "auto",

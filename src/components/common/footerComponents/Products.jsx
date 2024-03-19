@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip } from "@mui/material";
-import { products } from "../../../data/footer";
+import { products } from "@/data/footer";
 
 const Products = () => {
   return (
@@ -29,8 +29,8 @@ const Products = () => {
           mb={3}
           variant="body"
           sx={{
+            fontFamily: "'Space Grotesk', sans-serif",
             fontSize: { xs: "20px", md: "28px" },
-            textAlign: "left",
             color: "grey.lightActive",
           }}
         >
