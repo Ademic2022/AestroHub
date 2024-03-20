@@ -95,7 +95,7 @@ const Footer = () => {
             p={2}
             width={{ xs: "max-width", md: "1280px" }}
             sx={{
-              height: "256px",
+              height: { xs: "auto", md: "256px" },
               border: "1px solid #5c5c5c",
               borderRadius: "24px",
               overflowX: "auto",
