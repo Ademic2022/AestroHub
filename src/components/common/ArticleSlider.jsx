@@ -86,7 +86,7 @@ const ArticleSlider = ({ articles, props }) => {
                 }}
               >
                 <CardMedia
-                  sx={{ height: "318px", borderRadius: "16px" }}
+                  sx={{ height: { xs: "318px", md: "318px" }, borderRadius: "16px" }}
                   image={article.img}
                   title="Article Image"
                 />

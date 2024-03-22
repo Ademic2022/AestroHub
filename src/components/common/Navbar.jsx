@@ -104,7 +104,7 @@ const ResponsiveNavBar = (props) => {
       <AppBar
         component="nav"
         sx={{
-          pt: "15px",
+          pt: { xs: "0", md: "10px" },
           px: { xs: "auto", md: 5 },
           backgroundColor: "transparent",
           backdropFilter: "blur(7px)",
@@ -119,7 +119,13 @@ const ResponsiveNavBar = (props) => {
               component="img"
               image="/images/logo.png"
               alt="Logo"
-              sx={{ width: "150px", height: "60px", my: 0, objectFit: "cover" }}
+              sx={{
+                width: "150px",
+                height: "60px",
+                my: 0,
+                objectFit: "cover",
+                pb: 1,
+              }}
             />
           </Box>
           <IconButton
