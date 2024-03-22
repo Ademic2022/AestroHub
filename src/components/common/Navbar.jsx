@@ -113,7 +113,7 @@ const ResponsiveNavBar = (props) => {
           },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ p: 0 }}>
           <Box sx={{ flexGrow: 1 }} component={Link} href="/">
             <CardMedia
               component="img"
@@ -127,7 +127,7 @@ const ResponsiveNavBar = (props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 1, display: { sm: "none" } }}
           >
             <Box
               sx={{
