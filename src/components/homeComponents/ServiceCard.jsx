@@ -8,6 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import Link from "next/link";
+import CustomButton from "../common/CustomButton";
 
 const ServiceCard = ({ data, button }) => {
   return (
@@ -64,25 +65,7 @@ const ServiceCard = ({ data, button }) => {
           >
             {data.description}
           </Typography>
-          {button && (
-            <Button
-              variant="outlined"
-              component={Link}
-              href={`/blog/${data.id}/`}
-              passHref
-              tabIndex={-1}
-              startIcon={
-                <CardMedia
-                  component="img"
-                  image="/icons/rocket.webp"
-                  sx={{ width: 24, height: 24 }}
-                  alt="icon"
-                />
-              }
-            >
-              <Typography variant="body2">{data.btnText}</Typography>
-            </Button>
-          )}
+          {button && <CustomButton btnText={data.btnText} to="/contact-us" />}
         </Box>
       </CardContent>
     </Card>
