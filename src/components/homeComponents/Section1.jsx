@@ -9,7 +9,7 @@ const Section1 = () => {
       "We're not just an agency, we're a launchpad. A cross-functional, all-in-one service provider for everything you need to propel your Web3 project to the stars.",
     btnText: "Explore our station",
     destination: "/services",
-    img: "/images/image1.jpeg",
+    img: "/images/image1.webp",
     config: {
       img: {
         my: 3,

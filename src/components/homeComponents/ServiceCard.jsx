@@ -74,7 +74,7 @@ const ServiceCard = ({ data, button }) => {
               startIcon={
                 <CardMedia
                   component="img"
-                  image="/icons/rocket.png"
+                  image="/icons/rocket.webp"
                   sx={{ width: 24, height: 24 }}
                   alt="icon"
                 />

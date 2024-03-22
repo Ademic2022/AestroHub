@@ -38,7 +38,7 @@ const ArticleSlider = ({ articles, props }) => {
           icon={
             <CardMedia
               component="img"
-              image="/icons/Saturn.png"
+              image="/icons/Saturn.webp"
               sx={{
                 width: 24,
                 height: 24,
@@ -62,7 +62,7 @@ const ArticleSlider = ({ articles, props }) => {
           responsive={responsive}
           infinite={true}
           autoPlay={true}
-          autoPlaySpeed={3000}
+          autoPlaySpeed={5000}
         >
           {articles.map((article) => {
             // Split the summary into words
@@ -86,7 +86,10 @@ const ArticleSlider = ({ articles, props }) => {
                 }}
               >
                 <CardMedia
-                  sx={{ height: { xs: "318px", md: "318px" }, borderRadius: "16px" }}
+                  sx={{
+                    height: { xs: "218px", md: "318px" },
+                    borderRadius: "16px",
+                  }}
                   image={article.img}
                   title="Article Image"
                 />

@@ -100,7 +100,7 @@ const Services = ({ service, button }) => {
             >
               <CardMedia
                 component="img"
-                image="/images/image2.jpeg"
+                image="/images/image2.webp"
                 sx={{
                   width: "407px",
                   height: "100%",

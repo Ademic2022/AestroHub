@@ -73,7 +73,7 @@ const BlogDetailsChild = () => {
             objectFit: "cover",
             my: 5,
           }}
-          image="/images/dashboard.png"
+          image="/images/dashboard.webp"
           alt="Blog Img"
           title="Article Image"
         />

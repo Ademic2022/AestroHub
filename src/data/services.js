@@ -2,7 +2,7 @@ export const services = [
   {
     id: 1,
     title: "Strategy & Consulting",
-    bgImage: "/images/image6.jpeg",
+    bgImage: "/images/image6.webp",
     btnText: "Book a Consultation",
     destination: "/contact-us",
     description:
@@ -11,7 +11,7 @@ export const services = [
   {
     id: 2,
     title: "Community building & PR",
-    bgImage: "/images/image11.png",
+    bgImage: "/images/image11.webp",
     btnText: "Book a Consultation",
     destination: "/contact-us",
     description:
@@ -20,7 +20,7 @@ export const services = [
   {
     id: 3,
     title: "Design & Development",
-    bgImage: "/images/image12.png",
+    bgImage: "/images/image12.webp",
     btnText: "Book a Consultation",
     destination: "/contact-us",
     description:
@@ -29,7 +29,7 @@ export const services = [
   {
     id: 4,
     title: "Launchpad & Fundraising",
-    bgImage: "/images/image13.png",
+    bgImage: "/images/image13.webp",
     btnText: "Book a Consultation",
     destination: "/contact-us",
     description:
@@ -38,7 +38,7 @@ export const services = [
   {
     id: 5,
     title: "Marketing & Management",
-    bgImage: "/images/image3.jpeg",
+    bgImage: "/images/image3.webp",
     btnText: "Book a Consultation",
     destination: "/contact-us",
     description:
@@ -50,19 +50,19 @@ export const marketing = [
   {
     id: 1,
     title: "Paid Marketing",
-    img: "/icons/pill.png",
+    img: "/icons/pill.webp",
     desc: "Elevate your brand's online presence with targeted campaigns across Google Ads, Facebook Ads, and more, driving traffic and boosting conversions.",
   },
   {
     id: 2,
     title: "Social Media Marketing",
-    img: "/icons/pill.png",
+    img: "/icons/pill.webp",
     desc: "Leverage influencer partnerships to amplify your brand's voice across social platforms through compelling content and fostering community engagement.",
   },
   {
     id: 3,
     title: "SEO and Content Marketing",
-    img: "/icons/pill.png",
+    img: "/icons/pill.webp",
     desc: "Boost your website's visibility  with strategic keyword research, on-page optimization, content creation, and effective link-building strategies.",
   },
 ];
@@ -71,19 +71,19 @@ export const designs = [
   {
     id: 1,
     title: "Branding & Graphic Design",
-    img: "/icons/cube.png",
+    img: "/icons/cube.webp",
     desc: "From logo designs to motion graphics and others, we help you to shape your brand identity and elevate your brand's presence.",
   },
   {
     id: 2,
     title: "Product Design",
-    img: "/icons/cube.png",
+    img: "/icons/cube.webp",
     desc: "Transform your ideas into innovative and user-centric products that meet the needs of your target market, blending functionality with aesthetic.",
   },
   {
     id: 3,
     title: "Art",
-    img: "/icons/cube.png",
+    img: "/icons/cube.webp",
     desc: "Express your creativity and vision through various art forms, including illustrations, 2D/3D, digital art, and more, to evoke emotion and tell a story.",
   },
 ];
@@ -92,19 +92,19 @@ export const managements = [
   {
     id: 1,
     title: "Project & Product Management",
-    img: "/icons/pyramid.png",
+    img: "/icons/pyramid.webp",
     desc: "We drive successful project outcomes and product launches with effective planning, execution, and team coordination. Try us today...",
   },
   {
     id: 2,
     title: "Community Management",
-    img: "/icons/pyramid.png",
+    img: "/icons/pyramid.webp",
     desc: "We cultivate, moderate, and engage with your community to build brand loyalty, gather feedback, and foster meaningful connections.",
   },
   {
     id: 3,
     title: "Operations Management",
-    img: "/icons/pyramid.png",
+    img: "/icons/pyramid.webp",
     desc: "We streamline business operations and optimize processes to improve efficiency, reduce costs, and enhance overall performance.",
   },
 ];
@@ -113,19 +113,19 @@ export const developments = [
   {
     id: 1,
     title: "Business Development",
-    img: "/icons/mask.png",
+    img: "/icons/mask.webp",
     desc: "Drive growth and expand your business with strategic planning, market analysis, and partnership building to maximize opportunities and increase revenue.",
   },
   {
     id: 2,
     title: "Product Development",
-    img: "/icons/mask.png",
+    img: "/icons/mask.webp",
     desc: "Drive growth and expand your business with strategic planning, market analysis, and partnership building to maximize opportunities and increase revenue.",
   },
   {
     id: 3,
     title: "Blockchain Development",
-    img: "/icons/mask.png",
+    img: "/icons/mask.webp",
     desc: "Develop decentralized applications (DApps), smart contracts, or secure digital wallets with our team of experts at your finger tips.",
   },
 ];
@@ -134,19 +134,19 @@ export const writings = [
   {
     id: 1,
     title: "Copywriting",
-    img: "/icons/helix.png",
+    img: "/icons/helix.webp",
     desc: "Craft compelling and persuasive copy that resonates with your audience and drives action, advertisements, websites, or marketing material.",
   },
   {
     id: 2,
     title: "Articles and Blog Posts",
-    img: "/icons/helix.png",
+    img: "/icons/helix.webp",
     desc: "Create engaging and informative articles that educate, entertain, and inspire your readers, establishing your authority and building a loyal audience.",
   },
   {
     id: 3,
     title: "Whitepapers",
-    img: "/icons/helix.png",
+    img: "/icons/helix.webp",
     desc: "We dive deep into complex topics, providing in-depth analysis, insights, and solutions that showcase your expertise and thought leadership in your industry.",
   },
 ];
@@ -155,28 +155,28 @@ export const padservices = [
   {
     id: 1,
     title: "Community Funding",
-    bgImage: "/images/image6.jpeg",
+    bgImage: "/images/image6.webp",
     description:
       "Leverage a vibrant community of backers who are passionate about supporting innovative ideas.  Take along  a community of  investors who want to reach the moon together with you.",
   },
   {
     id: 2,
     title: "Venture Capitalist",
-    bgImage: "/images/image3.jpeg",
+    bgImage: "/images/image3.webp",
     description:
       "As a startup with the dream of taking your project to the stars, enjoy an early stage investment to remove the roadblocks in reaching the moon. ",
   },
   {
     id: 3,
     title: "Early Access",
-    bgImage: "/images/image12.png",
+    bgImage: "/images/image12.webp",
     description:
       "Looking for the next rocket going to the moon,  secure your sit as an early investor though Aestropad to find the next web3 gem.",
   },
   {
     id: 4,
     title: "Founders & Funders",
-    bgImage: "/images/image13.png",
+    bgImage: "/images/image13.webp",
     description:
       "Bringing founders and funders to shape the web3 ecosystem in developing new products through sustainable investments and partnerships.",
   },

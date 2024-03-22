@@ -7,7 +7,7 @@ const Section1 = () => {
     subtitle:
       "Web3 demystified. Read about the latest articles, product review and updates around web3 ecosystem.",
     btnText: "Make a Proposal",
-    img: "images/g10.png",
+    img: "images/g10.webp",
     config: {
       img: {
         height: "400px",

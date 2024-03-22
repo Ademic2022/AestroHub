@@ -2,25 +2,25 @@ export const items1 = [
   {
     id: 1,
     title: "Our Mission",
-    icon: "/icons/Jupiter.png",
+    icon: "/icons/Jupiter.webp",
     desc: "To help individuals, businesses and corporate entities in providing resources that is required to bring their ideas to life  by reducing  the time spent in gathering and having access to talents, collaborations and funding.",
   },
   {
     id: 2,
     title: "Our Vision",
-    icon: "/icons/Saturn.png",
+    icon: "/icons/Saturn.webp",
     desc: "To become the go-to place for everything and resources needed to turn ideas into a working product that solves problems in the world.",
   },
   {
     id: 3,
     title: "The Problem",
-    icon: "/icons/Mars.png",
+    icon: "/icons/Mars.webp",
     desc: "The lack of accessible organized knowledge  to innovate and create is a major problem in web3 and other ecosystem as well.  Numerous ideas that can change the world because of lack of resources has failed to be expressed.",
   },
   {
     id: 4,
     title: "The Solution",
-    icon: "/icons/Sun.png",
+    icon: "/icons/Sun.webp",
     desc: "Our main aim is to promote self-expression by providing talents and other resources required to build any product.  We also reduce the barriers in looking for different professionals before building a product.",
   },
 ];
@@ -29,19 +29,19 @@ export const whyUs = [
   {
     id: 1,
     title: "Collaboration",
-    img: "/icons/knot.png",
+    img: "/icons/knot.webp",
     desc: "Collaborate with founders, investors, and projects in our ecosystems. We make building profitable partnerships easy for brands.",
   },
   {
     id: 2,
     title: "Co-Creation",
-    img: "/icons/icosahedron.png",
+    img: "/icons/icosahedron.webp",
     desc: "We make building products easy by offering a specific service that you need while you handle your area of expertise at the same time.",
   },
   {
     id: 3,
     title: "Workforce",
-    img: "/icons/sphere.png",
+    img: "/icons/sphere.webp",
     desc: "With our variety of professionals with different skills, we reduce the cost of hiring individual talents by bringing single and multiple hands to your project.",
   },
 ];
@@ -50,19 +50,19 @@ export const products = [
   {
     id: 1,
     title: "AestroServices",
-    img: "/icons/Mars.png",
+    img: "/icons/Mars.webp",
     desc: "A web3 agency with a cross-functional services, helping web3 brands and innovators to give birth to their ideas.",
   },
   {
     id: 2,
     title: "AestroBlog",
-    img: "/icons/Saturn.png",
+    img: "/icons/Saturn.webp",
     desc: "A news platform tailored for web3 and blockchain projects to give the latest news  across different ecosystem in web3.",
   },
   {
     id: 3,
     title: "AestroPad",
-    img: "/icons/Jupiter.png",
+    img: "/icons/Jupiter.webp",
     desc: "A launchpad making access to funding easy,  bringing both project owners and community together.",
   },
 ];

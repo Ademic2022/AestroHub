@@ -32,7 +32,7 @@ const FullWidthSlider = () => {
           icon={
             <CardMedia
               component="img"
-              image="/icons/Saturn.png"
+              image="/icons/Saturn.webp"
               sx={{
                 width: 24,
                 height: 24,
@@ -69,7 +69,7 @@ const FullWidthSlider = () => {
               borderRadius: "16px",
               objectFit: "contain",
             }}
-            image="images/dashboard.png"
+            image="images/dashboard.webp"
             title="Article Image"
           />
           <Box>

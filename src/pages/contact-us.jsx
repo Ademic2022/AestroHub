@@ -28,7 +28,7 @@ const ContactUs = () => {
   } = useForm();
 
   const onSubmit = async (value) => {
-   console.log(value);
+    console.log(value);
   };
   return (
     <React.Fragment>
@@ -178,7 +178,7 @@ const ContactUs = () => {
                   startIcon={
                     <CardMedia
                       component="img"
-                      image="/icons/rocket.png"
+                      image="/icons/rocket.webp"
                       sx={{ width: 24, height: 24 }}
                       alt="icon"
                     />

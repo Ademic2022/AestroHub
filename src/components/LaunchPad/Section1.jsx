@@ -7,7 +7,7 @@ const Section1 = () => {
     subtitle:
       " Making liquidity and funding accessible to founders and project owners. Embrace a dynamic system of funding across different channels.  ",
     btnText: "Coming Soon",
-    img: "images/launch.png",
+    img: "images/launch.webp",
     config: {
       img: {
         height: "400px",

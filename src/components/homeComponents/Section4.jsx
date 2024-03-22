@@ -21,7 +21,7 @@ const Section4 = () => {
           icon={
             <CardMedia
               component="img"
-              image="/icons/Saturn.png"
+              image="/icons/Saturn.webp"
               sx={{
                 width: 24,
                 height: 24,
@@ -53,7 +53,7 @@ const Section4 = () => {
           >
             <Box
               sx={{
-                backgroundImage: `url("/images/image4.png")`,
+                backgroundImage: `url("/images/image4.webp")`,
                 filter: "grayscale(100%)",
                 backgroundSize: "cover",
                 height: "420px",
@@ -107,7 +107,7 @@ const Section4 = () => {
                   startIcon={
                     <CardMedia
                       component="img"
-                      image="/icons/rocket.png"
+                      image="/icons/rocket.webp"
                       sx={{ width: 24, height: 24 }}
                       alt="icon"
                     />
@@ -128,7 +128,7 @@ const Section4 = () => {
           >
             <Box
               sx={{
-                backgroundImage: `url("/images/image4.png")`,
+                backgroundImage: `url("/images/image4.webp")`,
                 filter: "grayscale(100%)",
                 backgroundSize: "cover",
                 height: "420px",
@@ -182,7 +182,7 @@ const Section4 = () => {
                   startIcon={
                     <CardMedia
                       component="img"
-                      image="/icons/rocket.png"
+                      image="/icons/rocket.webp"
                       sx={{ width: 24, height: 24 }}
                       alt="icon"
                     />

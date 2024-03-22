@@ -2,21 +2,21 @@ export const companies = [
   {
     id: 1,
     name: "AestroService",
-    logo: "/icons/Saturn.png",
+    logo: "/icons/Saturn.webp",
   },
   {
     id: 2,
     name: "AestroBlog",
-    logo: "/icons/Jupiter.png",
+    logo: "/icons/Jupiter.webp",
   },
   {
     id: 3,
     name: "AestroPad",
-    logo: "/icons/Saturn.png",
+    logo: "/icons/Saturn.webp",
   },
   {
     id: 4,
     name: "AestroLaunch",
-    logo: "/icons/Mars.png",
+    logo: "/icons/Mars.webp",
   },
 ];

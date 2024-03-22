@@ -17,7 +17,7 @@ const CustomButton = ({ icon, btnText, to }) => {
         startIcon={
           <CardMedia
             component="img"
-            image={icon ? icon : "/icons/rocket.png"}
+            image={icon ? icon : "/icons/rocket.webp"}
             sx={{ width: 24, height: 24 }}
             alt="icon"
           />

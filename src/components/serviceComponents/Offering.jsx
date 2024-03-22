@@ -21,7 +21,7 @@ const Offering = () => {
           icon={
             <CardMedia
               component="img"
-              image="/icons/Saturn.png"
+              image="/icons/Saturn.webp"
               sx={{
                 width: 24,
                 height: 24,
@@ -53,7 +53,7 @@ const Offering = () => {
           >
             <Box
               sx={{
-                backgroundImage: `url("/images/image4.png")`,
+                backgroundImage: `url("/images/image4.webp")`,
                 filter: "grayscale(100%)",
                 backgroundSize: "cover",
                 height: { xs: "auto", md: "520px" },
@@ -139,7 +139,7 @@ const Offering = () => {
           >
             <Box
               sx={{
-                backgroundImage: `url("/images/image4.png")`,
+                backgroundImage: `url("/images/image4.webp")`,
                 filter: "grayscale(100%)",
                 backgroundSize: "cover",
                 height: { xs: "auto", md: "520px" },

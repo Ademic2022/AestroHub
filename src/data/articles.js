@@ -6,7 +6,7 @@ export const articles = [
     summary:
       "Exploring the world of DeFi and its impact on traditional finance.",
     created_at: "2024-03-12",
-    img: "/images/image7.jpeg",
+    img: "/images/image7.webp",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const articles = [
     summary:
       "A deep dive into the world of Non-Fungible Tokens and their implications for creators and collectors.",
     created_at: "2024-03-10",
-    img: "/images/image8.jpeg",
+    img: "/images/image8.webp",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const articles = [
     summary:
       "Exploring the latest advancements in AI technology and its potential impact on various industries.",
     created_at: "2024-03-08",
-    img: "/images/image9.jpeg",
+    img: "/images/image9.webp",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const articles = [
     summary:
       "An introduction to the world of cryptocurrencies and blockchain technology.",
     created_at: "2024-03-06",
-    img: "/images/image7.jpeg",
+    img: "/images/image7.webp",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const articles = [
     summary:
       "How businesses can leverage data analytics to gain insights and make informed decisions.",
     created_at: "2024-03-04",
-    img: "/images/image8.jpeg",
+    img: "/images/image8.webp",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const articles = [
     summary:
       "Examining the economic consequences of climate change and the importance of sustainable practices.",
     created_at: "2024-03-02",
-    img: "/images/image9.jpeg",
+    img: "/images/image9.webp",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const articles = [
     summary:
       "A comprehensive overview of quantum computing and its potential applications.",
     created_at: "2024-02-29",
-    img: "/images/image8.jpeg",
+    img: "/images/image8.webp",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const articles = [
     summary:
       "Understanding the psychological factors that influence decision-making processes.",
     created_at: "2024-02-27",
-    img: "/images/image7.jpeg",
+    img: "/images/image7.webp",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const articles = [
     summary:
       "Tracing the history and evolution of mobile technology from its inception to the present day.",
     created_at: "2024-02-25",
-    img: "/images/image9.jpeg",
+    img: "/images/image9.webp",
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const articles = [
     summary:
       "Analyzing emerging trends in e-commerce and their implications for the future of online retail.",
     created_at: "2024-02-23",
-    img: "/images/image8.jpeg",
+    img: "/images/image8.webp",
   },
 ];
 

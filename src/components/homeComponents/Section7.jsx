@@ -30,7 +30,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
         >
           <CardMedia
             component="img"
-            image="/icons/Mars.png"
+            image="/icons/Mars.webp"
             alt="Logo"
             sx={{
               display: { xs: "none", md: "block" },
@@ -48,7 +48,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
           </Typography>
           <CardMedia
             component="img"
-            image="/icons/Saturn.png"
+            image="/icons/Saturn.webp"
             alt="Logo"
             sx={{
               display: { xs: "none", md: "block" },

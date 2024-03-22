@@ -27,7 +27,7 @@ const Section3 = () => {
           icon={
             <CardMedia
               component="img"
-              image="/icons/Saturn.png"
+              image="/icons/Saturn.webp"
               sx={{
                 width: 24,
                 height: 24,
