@@ -26,11 +26,11 @@ const Products = () => {
       {products.map((product) => (
         <Typography
           key={product.id}
-          mb={3}
+          mb={{ xs: 2, md: 3 }}
           variant="body"
           sx={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: { xs: "20px", md: "28px" },
+            fontSize: { xs: "15px", md: "28px" },
             color: "grey.lightActive",
           }}
         >

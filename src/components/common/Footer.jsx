@@ -175,9 +175,9 @@ const Footer = () => {
           <CardMedia
             sx={{
               position: "absolute",
-              top: { xs: 600, md: 0 },
+              top: { xs: 500, md: 0 },
               left: { xs: "20px", md: "726px" },
-              height: "1040px",
+              height: {xs:"840px", md:"1040px"},
               objectFit: "cover",
               width: { xs: "300px", md: "580px" },
               pointerEvents: "none",
@@ -193,7 +193,7 @@ const Footer = () => {
               height: { xs: "300px", md: "500px" },
               width: { xs: "300px", md: "500px" },
               borderRadius: "16px",
-              mt: 25,
+              // mt: 25,
             }}
             image="/images/logo.webp"
             title="Article Image"

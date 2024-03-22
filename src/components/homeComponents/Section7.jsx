@@ -12,7 +12,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
         p={2}
         width={{ xs: "max-width", md: "1280px" }}
         sx={{
-          height: "160px",
+          // height: "160px",
           bgcolor: bgcolor ? bgcolor : "#FF006E",
           borderRadius: "24px",
           overflowX: "auto",
@@ -33,16 +33,15 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
             image="/icons/Mars.webp"
             alt="Logo"
             sx={{
-              display: { xs: "none", md: "block" },
-              width: "130px",
-              pl: "30px",
+              width: { xs: "40px", md: "130px" },
+              pl: { xs: "0", md: "30px" },
             }}
           />
 
           <Typography
             variant="h2"
             width={{ xs: "100%", md: "60%" }}
-            sx={{ fontSize: { xs: 22, md: 44 } }}
+            sx={{ fontSize: { xs: 10, md: 44 } }}
           >
             {title ? title : ".... Made by you, delivered by us ...."}
           </Typography>
@@ -51,9 +50,8 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
             image="/icons/Saturn.webp"
             alt="Logo"
             sx={{
-              display: { xs: "none", md: "block" },
-              width: "150px",
-              pr: "30px",
+              width: { xs: "50px", md: "150px" },
+              pr: { xs: "0", md: "30px" },
             }}
           />
         </Box>

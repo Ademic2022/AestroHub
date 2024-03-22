@@ -71,6 +71,7 @@ const Section3 = () => {
           responsive={responsive}
           infinite={true}
           showDots={true}
+          arrows={false}
           autoPlay={true}
           autoPlaySpeed={5000}
         >

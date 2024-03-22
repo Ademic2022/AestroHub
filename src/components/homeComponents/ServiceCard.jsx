@@ -1,13 +1,10 @@
 import {
   Typography,
   Card,
-  CardMedia,
   CardContent,
   Box,
   Chip,
-  Button,
 } from "@mui/material";
-import Link from "next/link";
 import CustomButton from "../common/CustomButton";
 
 const ServiceCard = ({ data, button }) => {

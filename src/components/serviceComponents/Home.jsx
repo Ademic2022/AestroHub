@@ -8,6 +8,7 @@ const Section1 = () => {
       "We offer individual services and cross-functional services. We help individual and businesses to remove the barrier of searching for a single service providers. Get all the services you need here to build your dream product.",
     btnText: "Make a Proposal",
     img: "images/Mars.webp",
+    destination: "/contact-us",
     config: {
       img: {
         height: "400px",
