@@ -110,6 +110,7 @@ const Footer = () => {
                 justifyContent: "space-between",
                 width: "100%",
               }}
+              zIndex={1}
             >
               <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>

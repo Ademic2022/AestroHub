@@ -76,12 +76,10 @@ const Services = ({ service, button }) => {
                 {service.description}
               </Typography>
               {button && (
-                <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-                  <CustomButton
-                    btnText={service.btnText}
-                    to={service.destination}
-                  />
-                </Box>
+                <CustomButton
+                  btnText={service.btnText}
+                  to={service.destination}
+                />
               )}
             </Box>
           </Grid>

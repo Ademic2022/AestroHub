@@ -71,12 +71,12 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
           </Typography>
         </Box>
       )}
-      <Box
-        mb={1}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
-        <CustomButton to="/services" btnText="Explore our station" />
-      </Box>
+
+      <CustomButton
+        to="/services"
+        btnText="Explore our station"
+        position="center"
+      />
     </React.Fragment>
   );
 };

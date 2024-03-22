@@ -31,9 +31,7 @@ const PageSection = ({ sectionDetails, button }) => {
           {subtitle}
         </Typography>
         {button && (
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <CustomButton to={destination} btnText={btnText} />
-          </Box>
+          <CustomButton to={destination} btnText={btnText} position="center" />
         )}
       </Box>
 

@@ -111,7 +111,7 @@ const ArticleSlider = ({ articles, props }) => {
                       <FaUserTie />
                       <Typography
                         pl={1}
-                        sx={{ fontSize: { xs: "18px", md: "23px" } }}
+                        sx={{ fontSize: { xs: "15px", md: "23px" } }}
                       >
                         {article.author}
                       </Typography>
@@ -124,13 +124,13 @@ const ArticleSlider = ({ articles, props }) => {
                       }}
                     >
                       <FaCalendarAlt />
-                      <Typography pl={1} sx={{ fontSize: { xs: 15, md: 20 } }}>
+                      <Typography pl={1} sx={{ fontSize: { xs: 13, md: 20 } }}>
                         {article.created_at}
                       </Typography>
                     </Box>
                   </Box>
                   <Typography
-                    pt={3}
+                    pt={{ xs: 0.5, md: 3 }}
                     textAlign="left"
                     gutterBottom
                     variant="body"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip, Grid, Button } from "@mui/material";
 import Link from "next/link";
+import CustomButton from "../common/CustomButton";
 
 const Section4 = () => {
   return (
@@ -99,22 +100,7 @@ const Section4 = () => {
                   monitor and ensure full delivery of the service. Get a single
                   professionals to work on your specific needs.
                 </Typography>
-                <Button
-                  variant="outlined"
-                  component={Link}
-                  href="/contact-us"
-                  tabIndex={-1}
-                  startIcon={
-                    <CardMedia
-                      component="img"
-                      image="/icons/rocket.webp"
-                      sx={{ width: 24, height: 24 }}
-                      alt="icon"
-                    />
-                  }
-                >
-                  <Typography variant="body2">Hire a Professional</Typography>
-                </Button>
+                <CustomButton btnText="Hire a Professional" to="/contact-us" />
               </Box>
             </Box>
           </Grid>
@@ -174,22 +160,7 @@ const Section4 = () => {
                   work on your project. Our entire team across different
                   categories take over every aspect of your project.
                 </Typography>
-                <Button
-                  variant="outlined"
-                  component={Link}
-                  href="/contact-us"
-                  tabIndex={-1}
-                  startIcon={
-                    <CardMedia
-                      component="img"
-                      image="/icons/rocket.webp"
-                      sx={{ width: 24, height: 24 }}
-                      alt="icon"
-                    />
-                  }
-                >
-                  <Typography variant="body2">Hire the team</Typography>
-                </Button>
+                <CustomButton btnText="Hire the team" to="/contact-us" />
               </Box>
             </Box>
           </Grid>
