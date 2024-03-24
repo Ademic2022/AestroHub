@@ -7,7 +7,7 @@ const graphQLClient = new GraphQLClient(endpoint);
 export const fetchPosts = async () => {
   const query = gql`
     query AllPosts {
-      postsConnection {
+      postsConnection(orderBy: createdAt_DESC) {
         edges {
           node {
             author {
