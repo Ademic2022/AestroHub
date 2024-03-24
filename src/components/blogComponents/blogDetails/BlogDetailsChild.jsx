@@ -9,8 +9,11 @@ import {
   CardMedia,
 } from "@mui/material";
 import { FaCalendarAlt } from "react-icons/fa";
+import { capitalizeWords } from "@/utils/capitalizeWord";
+import { formatBlogDate } from "@/utils/dateFormatter";
 
-const BlogDetailsChild = () => {
+const BlogDetailsChild = ({ post }) => {
+  const { slug, title, createdAt, content, author, featuredImage } = post.node;
   return (
     <React.Fragment>
       <Box
@@ -21,7 +24,7 @@ const BlogDetailsChild = () => {
           <ListItemAvatar>
             <Avatar
               alt="Remy Sharp"
-              src="/avatars/male.jpeg"
+              src={author.photo.url}
               sx={{ height: "80px", width: "80px" }}
             />
           </ListItemAvatar>
@@ -34,7 +37,7 @@ const BlogDetailsChild = () => {
                 textAlign="left"
                 sx={{ fontSize: { xs: 17, md: 22 } }}
               >
-                Damilare Alabi
+                {capitalizeWords(author.name)}
               </Typography>
             }
             secondary={
@@ -53,7 +56,7 @@ const BlogDetailsChild = () => {
                 <span style={{ marginTop: "5px" }}>
                   <FaCalendarAlt />
                 </span>
-                <span>12 sep 2021</span>
+                <span>{formatBlogDate(createdAt)}</span>
               </Typography>
             }
           />
@@ -64,7 +67,7 @@ const BlogDetailsChild = () => {
           textAlign="left"
           sx={{ fontSize: { xs: "35px", md: "80px" } }}
         >
-          10 tokens that will boom in the next bull run
+          {title}
         </Typography>
         <CardMedia
           sx={{
@@ -73,45 +76,18 @@ const BlogDetailsChild = () => {
             objectFit: "cover",
             my: 5,
           }}
-          image="/images/dashboard.webp"
+          image={featuredImage.url}
           alt="Blog Img"
           title="Article Image"
         />
-        <Typography my={2} variant="h2" textAlign="left" fontSize="28px">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod.
-        </Typography>
-        <Typography variant="body1" textAlign="left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
-          blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At
-          risus viverra adipiscing at in tellus. Sociis natoque penatibus et
-          magnis dis parturient montes. Ridiculus mus mauris vitae ultricies
-          leo. Neque egestas congue quisque egestas diam. Risus in hendrerit
-          gravida rutrum quisque non.
-        </Typography>
-        <Typography my={2} variant="h2" textAlign="left" fontSize="28px">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod.
-        </Typography>
-        <Typography variant="body1" textAlign="left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
-          blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At
-          risus viverra adipiscing at in tellus. Sociis natoque penatibus et
-          magnis dis parturient montes. Ridiculus mus mauris vitae ultricies
-          leo. Neque egestas congue quisque egestas diam. Risus in hendrerit
-          gravida rutrum quisque non.
-        </Typography>
-        <Typography variant="body1" textAlign="left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
-          blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At
-          risus viverra adipiscing at in tellus. Sociis natoque penatibus et
-          magnis dis parturient montes. Ridiculus mus mauris vitae ultricies
-          leo. Neque egestas congue quisque egestas diam. Risus in hendrerit
-          gravida rutrum quisque non.
-        </Typography>
+        <Box
+          component="div"
+          textAlign="left"
+          color="#fff"
+          fontSize={23}
+          lineHeight={1.5}
+          dangerouslySetInnerHTML={{ __html: content.html }}
+        />
       </Box>
     </React.Fragment>
   );

@@ -7,9 +7,10 @@ import Section4 from "@/components/homeComponents/Section4";
 import Section5 from "@/components/homeComponents/Section5";
 import Section7 from "@/components/homeComponents/Section7";
 import ArticleSlider from "@/components/common/ArticleSlider";
+import { fetchPosts } from "@/utils/apiCalls/fetchPosts";
 import { articles, homeProps } from "@/data/articles";
 
-const Home = () => {
+const Home = ({postsData}) => {
   return (
     <React.Fragment>
       <Box mt={5}>
@@ -18,11 +19,30 @@ const Home = () => {
         <Section3 />
         <Section4 />
         <Section5 />
-        <ArticleSlider props={homeProps} articles={articles} />
+        <ArticleSlider props={homeProps} articles={postsData} />
         <Section7 />
       </Box>
     </React.Fragment>
   );
 };
 
+export async function getStaticProps() {
+  try {
+    const postsData = await fetchPosts();
+
+    return {
+      props: {
+        postsData,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return {
+      props: {
+        postsData: [],
+      },
+    };
+  }
+}
 export default Home;

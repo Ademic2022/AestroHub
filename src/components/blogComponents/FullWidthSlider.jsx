@@ -12,8 +12,13 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 import { FaCalendarAlt } from "react-icons/fa";
+import { truncateContent } from "@/utils/postTruncator";
+import { capitalizeWords } from "@/utils/capitalizeWord";
+import { formatBlogDate } from "@/utils/dateFormatter";
 
-const FullWidthSlider = () => {
+const FullWidthSlider = ({ latestPost }) => {
+  const { slug, title, createdAt, content, author, featuredImage } = latestPost;
+  const truncatedSummary = truncateContent(content.html, 25);
   return (
     <React.Fragment>
       <Box
@@ -69,7 +74,7 @@ const FullWidthSlider = () => {
               borderRadius: "16px",
               objectFit: "contain",
             }}
-            image="images/dashboard.webp"
+            image={featuredImage.url}
             title="Article Image"
           />
           <Box>
@@ -104,7 +109,7 @@ const FullWidthSlider = () => {
                   textAlign="left"
                   sx={{ fontSize: { xs: "32", md: "36px" } }}
                 >
-                  Design tips for designers that cover everything you need
+                  {title}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -114,9 +119,7 @@ const FullWidthSlider = () => {
                     fontSize: { xs: "15px", md: "20px" },
                   }}
                 >
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                  occaecat cupidatat non proident.
+                  {truncatedSummary}
                 </Typography>
               </Grid>
               <Grid item xs={12} md={6} mt={{ xs: 1, md: 4 }}>
@@ -124,7 +127,7 @@ const FullWidthSlider = () => {
                   <ListItemAvatar>
                     <Avatar
                       alt="Remy Sharp"
-                      src="/avatars/male.jpeg"
+                      src={author.photo.url}
                       sx={{ height: "80px", width: "80px" }}
                     />
                   </ListItemAvatar>
@@ -137,7 +140,7 @@ const FullWidthSlider = () => {
                         textAlign="left"
                         sx={{ fontSize: { xs: 17, md: 22 } }}
                       >
-                        Damilare Alabi
+                        {capitalizeWords(author.name)}
                       </Typography>
                     }
                     secondary={
@@ -156,7 +159,7 @@ const FullWidthSlider = () => {
                         <span style={{ marginTop: "5px" }}>
                           <FaCalendarAlt />
                         </span>
-                        <span>12 sep 2021</span>
+                        <span>{formatBlogDate(createdAt)}</span>
                       </Typography>
                     }
                   />

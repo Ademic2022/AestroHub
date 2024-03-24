@@ -16,6 +16,9 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import Link from "next/link";
 import { responsive } from "@/data/CarouselResponsive";
+import { truncateContent } from "@/utils/postTruncator";
+import { capitalizeWords } from "@/utils/capitalizeWord";
+import { formatBlogDate } from "@/utils/dateFormatter";
 
 const ArticleSlider = ({ articles, props }) => {
   return (
@@ -64,18 +67,16 @@ const ArticleSlider = ({ articles, props }) => {
           autoPlay={true}
           autoPlaySpeed={5000}
         >
-          {articles.map((article) => {
-            // Split the summary into words
-            const words = article.summary.split(" ");
-            // Check if the number of words exceeds 10
-            const truncatedSummary =
-              words.length > 11
-                ? `${words.slice(0, 11).join(" ")}...`
-                : article.summary;
+          {articles.map((article, index) => {
+            // const { slug, title, createdAt, content, author, featuredImage } =
+            //   article.node;
+            const { slug, title, createdAt, content, author, featuredImage } =
+              article.node || article;
+            const truncatedSummary = truncateContent(content.html);
 
             return (
               <Card
-                key={article.id}
+                key={index}
                 sx={{
                   m: 1,
                   p: 1,
@@ -90,7 +91,7 @@ const ArticleSlider = ({ articles, props }) => {
                     height: { xs: "218px", md: "318px" },
                     borderRadius: "16px",
                   }}
-                  image={article.img}
+                  image={featuredImage.url}
                   title="Article Image"
                 />
                 <CardContent>
@@ -111,9 +112,9 @@ const ArticleSlider = ({ articles, props }) => {
                       <FaUserTie />
                       <Typography
                         pl={1}
-                        sx={{ fontSize: { xs: "12px", md: "23px" } }}
+                        sx={{ fontSize: { xs: "12px", md: "18px" } }}
                       >
-                        {article.author}
+                        {capitalizeWords(author.name)}
                       </Typography>
                     </Box>
                     <Box
@@ -124,8 +125,8 @@ const ArticleSlider = ({ articles, props }) => {
                       }}
                     >
                       <FaCalendarAlt />
-                      <Typography pl={1} sx={{ fontSize: { xs: 10, md: 20 } }}>
-                        {article.created_at}
+                      <Typography pl={1} sx={{ fontSize: { xs: 10, md: 16 } }}>
+                        {formatBlogDate(createdAt)}
                       </Typography>
                     </Box>
                   </Box>
@@ -137,7 +138,7 @@ const ArticleSlider = ({ articles, props }) => {
                     component="div"
                     sx={{ fontSize: { xs: 18, md: 22 } }}
                   >
-                    {article.headline}
+                    {title}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -152,7 +153,7 @@ const ArticleSlider = ({ articles, props }) => {
                   <Button
                     variant="filled"
                     component={Link}
-                    href={`/blog/${article.id}/`}
+                    href={`/blog/${slug}/`}
                     passHref
                     sx={{
                       bgcolor: "#0EAD69",

@@ -1,27 +1,37 @@
 import { GraphQLClient, gql } from "graphql-request";
 
-export const fetchPosts = async () => {
-  const endpoint =
-    "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cltyt1rd20aun07uwh60zqv0w/master";
-  const graphQLClient = new GraphQLClient(endpoint);
+const endpoint =
+  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clu3baxry08us07uwhvu0c2kx/master";
+const graphQLClient = new GraphQLClient(endpoint);
 
+export const fetchPosts = async () => {
   const query = gql`
-    {
-      posts {
-        title
-        datePublished
-        content {
-          html
-        }
-        slug
-        author {
-          name
-          avatar {
-            url
+    query AllPosts {
+      postsConnection {
+        edges {
+          node {
+            author {
+              name
+              id
+              bio
+              photo {
+                url
+              }
+            }
+            content {
+              html
+            }
+            createdAt
+            slug
+            title
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
           }
-        }
-        coverPhoto {
-          url
         }
       }
     }
@@ -29,20 +39,108 @@ export const fetchPosts = async () => {
 
   try {
     const data = await graphQLClient.request(query);
-    return data.posts;
+    return data.postsConnection.edges; // Change from data.posts to data.postsConnection.edges
   } catch (error) {
     console.error("Error fetching posts:", error);
     return [];
   }
 };
 
-export async function fetchPostBySlug(slug) {
+export const fetchPostBySlug = async (slug) => {
   try {
     const posts = await fetchPosts();
-    const post = posts.find((post) => post.slug === slug);
+    const post = posts.find((post) => post.node.slug === slug); // Access post.node.slug
     return post;
   } catch (error) {
     console.error("Error fetching posts:", error);
     return null;
   }
-}
+};
+
+export const fetchLatestPost = async () => {
+  const query = gql`
+    query LatestPost {
+      postsConnection(first: 1, orderBy: createdAt_DESC) {
+        edges {
+          node {
+            author {
+              name
+              id
+              bio
+              photo {
+                url
+              }
+            }
+            content {
+              html
+            }
+            createdAt
+            slug
+            title
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const data = await graphQLClient.request(query);
+    if (data.postsConnection.edges.length > 0) {
+      return data.postsConnection.edges[0].node; // Return the latest post
+    } else {
+      return null; // No posts found
+    }
+  } catch (error) {
+    console.error("Error fetching latest post:", error);
+    return null;
+  }
+};
+
+export const fetchFeaturedPosts = async (featured) => {
+  const query = gql`
+    query FeaturedPosts($featured: Boolean!) {
+      postsConnection(where: { featuredPost: $featured }) {
+        edges {
+          node {
+            author {
+              name
+              id
+              bio
+              photo {
+                url
+              }
+            }
+            content {
+              html
+            }
+            createdAt
+            slug
+            title
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const data = await graphQLClient.request(query, { featured });
+    return data.postsConnection.edges.map((edge) => edge.node); // Return the featured posts
+  } catch (error) {
+    console.error("Error fetching featured posts:", error);
+    return [];
+  }
+};
