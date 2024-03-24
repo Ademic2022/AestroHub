@@ -24,17 +24,17 @@ export async function getStaticProps({ params }) {
   // Fetch individual post data based on the slug
   const post = await fetchPostBySlug(params.slug);
 
-  // Fetch all posts
+  // Fetch all posts except the current one
   const allPosts = await fetchPosts();
+  const filteredPosts = allPosts.filter((p) => p.node.slug !== params.slug);
 
   return {
     props: {
       post,
-      allPosts,
+      allPosts: filteredPosts,
     },
   };
 }
-
 
 const BlogDetails = ({ post, allPosts }) => {
   return (
