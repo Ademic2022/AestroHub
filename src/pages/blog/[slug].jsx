@@ -10,13 +10,24 @@ export async function getStaticPaths() {
   const posts = await fetchPosts();
 
   // Map fetched slugs to paths
-  const paths = posts.map((post) => ({
-    params: { slug: post.node.slug },
-  }));
+  // const paths = posts.map((post) => ({
+  //   params: { slug: post.node.slug },
+  // }));
+  const paths = posts.map((post) => {
+    if (post.node) {
+      return {
+        params: { slug: post.node.slug },
+      };
+    } else {
+      return {
+        params: { slug: post.slug },
+      };
+    }
+  });
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
