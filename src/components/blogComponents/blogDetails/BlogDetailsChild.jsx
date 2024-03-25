@@ -23,7 +23,7 @@ const BlogDetailsChild = ({ post }) => {
         <ListItem alignItems="center">
           <ListItemAvatar>
             <Avatar
-              alt="Remy Sharp"
+              alt={author.name}
               src={author.photo.url}
               sx={{ height: "80px", width: "80px" }}
             />
@@ -42,14 +42,13 @@ const BlogDetailsChild = ({ post }) => {
             }
             secondary={
               <Typography
-                pl={1}
                 sx={{
                   textAlign: "left",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "flex-start",
                   gap: 1,
-                  fontSize: { xs: 15, md: 20 },
+                  fontSize: { xs: 14, md: 20 },
                   color: "grey.normal",
                 }}
               >
@@ -65,16 +64,16 @@ const BlogDetailsChild = ({ post }) => {
           my={2}
           variant="h2"
           textAlign="left"
-          sx={{ fontSize: { xs: "35px", md: "80px" } }}
+          sx={{ fontSize: { xs: "30px", md: "70px" } }}
         >
           {title}
         </Typography>
         <CardMedia
           sx={{
-            height: { xs: "300px", md: "520px" },
+            height: { xs: "250px", md: "520px" },
             borderRadius: "16px",
             objectFit: "cover",
-            my: 5,
+            my: 3,
           }}
           image={featuredImage.url}
           alt="Blog Img"
@@ -84,7 +83,7 @@ const BlogDetailsChild = ({ post }) => {
           component="div"
           textAlign="left"
           color="#fff"
-          fontSize={23}
+          // fontSize={23}
           lineHeight={1.5}
           dangerouslySetInnerHTML={{ __html: content.html }}
         />

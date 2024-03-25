@@ -10,7 +10,7 @@ export const formatBlogDate = (dateString) => {
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
   // Construct formatted date string
-  const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
+  const formattedDate = `${day}/${month}/${year} (${hours}:${minutes})`;
 
   return formattedDate;
 };

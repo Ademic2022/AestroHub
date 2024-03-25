@@ -39,7 +39,7 @@ export const fetchPosts = async () => {
 
   try {
     const data = await graphQLClient.request(query);
-    return data.postsConnection.edges; // Change from data.posts to data.postsConnection.edges
+    return data.postsConnection.edges;
   } catch (error) {
     console.error("Error fetching posts:", error);
     return [];
@@ -49,7 +49,7 @@ export const fetchPosts = async () => {
 export const fetchPostBySlug = async (slug) => {
   try {
     const posts = await fetchPosts();
-    const post = posts.find((post) => post.node.slug === slug); // Access post.node.slug
+    const post = posts.find((post) => post.node.slug === slug);
     return post;
   } catch (error) {
     console.error("Error fetching posts:", error);

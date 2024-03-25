@@ -10,6 +10,7 @@ import {
   Avatar,
   ListItemText,
   ListItemAvatar,
+  useMediaQuery,
 } from "@mui/material";
 import { FaCalendarAlt } from "react-icons/fa";
 import { truncateContent } from "@/utils/postTruncator";
@@ -17,8 +18,12 @@ import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
 
 const FullWidthSlider = ({ latestPost }) => {
+  // Determine the number of words to truncate based on screen size
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const truncateLength = isMobile ? 10 : 25;
+
   const { slug, title, createdAt, content, author, featuredImage } = latestPost;
-  const truncatedSummary = truncateContent(content.html, 25);
+  const truncatedSummary = truncateContent(content.html, truncateLength);
   return (
     <React.Fragment>
       <Box
@@ -70,7 +75,7 @@ const FullWidthSlider = ({ latestPost }) => {
         <Box>
           <CardMedia
             sx={{
-              height: { xs: "300px", md: "429px" },
+              height: { xs: "220px", md: "429px" },
               borderRadius: "16px",
               objectFit: "contain",
             }}
@@ -81,7 +86,7 @@ const FullWidthSlider = ({ latestPost }) => {
             <Grid
               container
               direction={{ xs: "column-reverse", md: "row" }}
-              spacing={2}
+              spacing={{ xs: 0, md: 2 }}
             >
               <Grid
                 container
@@ -91,22 +96,13 @@ const FullWidthSlider = ({ latestPost }) => {
                 direction="column"
                 justifyContent="flex-start"
                 alignItems="flex-start"
+                m={{ xs: "0px 5px 5px", md: "0" }}
               >
-                <Typography
-                  variant="body2"
-                  gutterBottom
-                  my={2}
-                  sx={{
-                    fontSize: { xs: "16px", md: "20px" },
-                    color: "grey.lightActive",
-                  }}
-                >
-                  Web3
-                </Typography>
                 <Typography
                   gutterBottom
                   variant="customBody"
                   textAlign="left"
+                  my={{ xs: 0, md: 2 }}
                   sx={{ fontSize: { xs: "32", md: "36px" } }}
                 >
                   {title}
@@ -126,7 +122,7 @@ const FullWidthSlider = ({ latestPost }) => {
                 <ListItem alignItems="center">
                   <ListItemAvatar>
                     <Avatar
-                      alt="Remy Sharp"
+                      alt={author.name}
                       src={author.photo.url}
                       sx={{ height: "80px", width: "80px" }}
                     />
@@ -145,7 +141,6 @@ const FullWidthSlider = ({ latestPost }) => {
                     }
                     secondary={
                       <Typography
-                        pl={1}
                         sx={{
                           textAlign: "left",
                           display: "flex",
