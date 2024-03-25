@@ -4,47 +4,6 @@ const endpoint =
   "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clu3baxry08us07uwhvu0c2kx/master";
 const graphQLClient = new GraphQLClient(endpoint);
 
-// export const fetchPosts = async () => {
-//   const query = gql`
-//     query AllPosts {
-//       postsConnection(orderBy: createdAt_DESC) {
-//         edges {
-//           node {
-//             author {
-//               name
-//               id
-//               bio
-//               photo {
-//                 url
-//               }
-//             }
-//             content {
-//               html
-//             }
-//             createdAt
-//             slug
-//             title
-//             featuredImage {
-//               url
-//             }
-//             categories {
-//               name
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `;
-
-//   try {
-//     const data = await graphQLClient.request(query);
-//     return data.postsConnection.edges;
-//   } catch (error) {
-//     console.error("Error fetching posts:", error);
-//     return [];
-//   }
-// };
 export const fetchPosts = async () => {
   const query = gql`
     query AllPosts {

@@ -16,6 +16,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { truncateContent } from "@/utils/postTruncator";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
+import Link from "next/link";
 
 const FullWidthSlider = ({ latestPost }) => {
   // Determine the number of words to truncate based on screen size
@@ -73,15 +74,17 @@ const FullWidthSlider = ({ latestPost }) => {
         }}
       >
         <Box>
-          <CardMedia
-            sx={{
-              height: { xs: "220px", md: "429px" },
-              borderRadius: "16px",
-              objectFit: "contain",
-            }}
-            image={featuredImage.url}
-            title="Article Image"
-          />
+          <Link href={`/blog/${slug}`}>
+            <CardMedia
+              sx={{
+                height: { xs: "220px", md: "429px" },
+                borderRadius: "16px",
+                objectFit: "contain",
+              }}
+              image={featuredImage.url}
+              title="Article Image"
+            />
+          </Link>
           <Box>
             <Grid
               container
@@ -103,9 +106,16 @@ const FullWidthSlider = ({ latestPost }) => {
                   variant="customBody"
                   textAlign="left"
                   my={{ xs: 0, md: 2 }}
-                  sx={{ fontSize: { xs: "32", md: "36px" } }}
+                  sx={{
+                    fontSize: { xs: "32", md: "36px" },
+                  }}
                 >
-                  {title}
+                  <Link
+                    style={{ textDecoration: "none", color: "#fff" }}
+                    href={`/blog/${slug}`}
+                  >
+                    {title}
+                  </Link>
                 </Typography>
                 <Typography
                   variant="body2"

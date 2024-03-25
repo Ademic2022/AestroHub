@@ -11,6 +11,7 @@ import {
 import { FaCalendarAlt } from "react-icons/fa";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
+import Link from "next/link";
 
 const BlogDetailsChild = ({ post }) => {
   const { slug, title, createdAt, content, author, featuredImage } = post;
