@@ -80,8 +80,7 @@ export const fetchPosts = async () => {
 
   try {
     const data = await graphQLClient.request(query);
-    console.log(data.postsConnection.edges); // Log the response to inspect its structure
-    return data.postsConnection.edges.map((edge) => edge.node); // Return the mapped data
+    return data.postsConnection.edges.map((edge) => edge.node);
   } catch (error) {
     console.error("Error fetching posts:", error);
     return [];
@@ -135,7 +134,7 @@ export const fetchLatestPost = async () => {
   try {
     const data = await graphQLClient.request(query);
     if (data.postsConnection.edges.length > 0) {
-      return data.postsConnection.edges[0].node; // Return the latest post
+      return data.postsConnection.edges[0].node;
     } else {
       return null; // No posts found
     }
@@ -180,7 +179,7 @@ export const fetchFeaturedPosts = async (featured) => {
 
   try {
     const data = await graphQLClient.request(query, { featured });
-    return data.postsConnection.edges.map((edge) => edge.node); // Return the featured posts
+    return data.postsConnection.edges.map((edge) => edge.node);
   } catch (error) {
     console.error("Error fetching featured posts:", error);
     return [];

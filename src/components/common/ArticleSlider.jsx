@@ -68,10 +68,8 @@ const ArticleSlider = ({ articles, props }) => {
           autoPlaySpeed={5000}
         >
           {articles.map((article, index) => {
-            // const { slug, title, createdAt, content, author, featuredImage } =
-            //   article.node;
             const { slug, title, createdAt, content, author, featuredImage } =
-              article.node || article;
+              article;
             const truncatedSummary = truncateContent(content.html);
 
             return (
