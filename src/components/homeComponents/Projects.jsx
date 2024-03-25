@@ -3,7 +3,7 @@ import { Box, Typography, CardMedia, Chip, Grid } from "@mui/material";
 import { alpha } from "@mui/system";
 import { projects } from "@/data/projects";
 
-const Section5 = () => {
+const Projects = () => {
   return (
     <React.Fragment>
       <Box
@@ -108,4 +108,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default Projects;

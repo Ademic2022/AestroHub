@@ -1,9 +1,8 @@
 import React from "react";
-import { Box, Typography, CardMedia, Chip, Grid, Button } from "@mui/material";
-import Link from "next/link";
+import { Box, Typography, CardMedia, Chip, Grid } from "@mui/material";
 import CustomButton from "../common/CustomButton";
 
-const Section4 = () => {
+const Offering = () => {
   return (
     <React.Fragment>
       <Box
@@ -172,4 +171,4 @@ const Section4 = () => {
   );
 };
 
-export default Section4;
+export default Offering;

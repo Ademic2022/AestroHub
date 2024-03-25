@@ -7,7 +7,7 @@ import ServiceCard from "./ServiceCard";
 import { responsive } from "@/data/CarouselResponsive";
 import Services from "./Services";
 
-const Section3 = () => {
+const ServiceComponent = () => {
   return (
     <React.Fragment>
       <Box
@@ -86,4 +86,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default ServiceComponent;

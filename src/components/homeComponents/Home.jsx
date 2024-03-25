@@ -1,7 +1,7 @@
 import React from "react";
 import PageSection from "../common/PageSection";
 
-const Section1 = () => {
+const Home = () => {
   const sectionDetails = {
     id: 1,
     title: "AestroHub",
@@ -31,4 +31,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default Home;

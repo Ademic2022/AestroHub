@@ -1,21 +1,20 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Section1 from "@/components/blogComponents/Section1";
+import Home from "@/components/blogComponents/Home";
 import Section7 from "@/components/homeComponents/Section7";
 import ArticleSlider from "@/components/common/ArticleSlider";
-import { articles, featProps, prevProps } from "@/data/articles";
+import { featProps, prevProps } from "@/data/articles";
 import FullWidthSlider from "@/components/blogComponents/FullWidthSlider";
 import {
   fetchFeaturedPosts,
   fetchLatestPost,
-  fetchPosts,
 } from "@/utils/apiCalls/fetchPosts";
 
 const BlogPage = ({ latestPost, featuredPosts, posts }) => {
   return (
     <React.Fragment>
       <Box mt={5}>
-        <Section1 />
+        <Home />
         <FullWidthSlider latestPost={latestPost} />
         <ArticleSlider props={prevProps} articles={posts} />
         <ArticleSlider props={featProps} articles={featuredPosts} />

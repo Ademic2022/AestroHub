@@ -3,7 +3,7 @@ import { Box, Typography, CardMedia } from "@mui/material";
 import Marquee from "react-marquee-slider";
 import { companies } from "@/data/companies";
 
-const Section2 = () => {
+const Company = () => {
   return (
     <React.Fragment>
       <Box
@@ -96,4 +96,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default Company;

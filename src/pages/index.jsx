@@ -1,24 +1,24 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Section1 from "@/components/homeComponents/Section1";
-import Section2 from "@/components/homeComponents/Section2";
-import Section3 from "@/components/homeComponents/Section3";
-import Section4 from "@/components/homeComponents/Section4";
-import Section5 from "@/components/homeComponents/Section5";
+import Home from "@/components/homeComponents/Home";
+import Company from "@/components/homeComponents/Company";
+import ServiceComponent from "@/components/homeComponents/ServiceComponent";
+import Offering from "@/components/homeComponents/Offering";
+import Projects from "@/components/homeComponents/Projects";
 import Section7 from "@/components/homeComponents/Section7";
 import ArticleSlider from "@/components/common/ArticleSlider";
 import { fetchPosts } from "@/utils/apiCalls/fetchPosts";
-import { articles, homeProps } from "@/data/articles";
+import { homeProps } from "@/data/articles";
 
-const Home = ({postsData}) => {
+const HomePage = ({postsData}) => {
   return (
     <React.Fragment>
       <Box mt={5}>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
+        <Home />
+        <Company />
+        <ServiceComponent />
+        <Offering />
+        <Projects />
         <ArticleSlider props={homeProps} articles={postsData} />
         <Section7 />
       </Box>
@@ -45,4 +45,4 @@ export async function getStaticProps() {
     };
   }
 }
-export default Home;
+export default HomePage;

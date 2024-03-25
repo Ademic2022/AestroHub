@@ -1,7 +1,7 @@
 import React from "react";
 import PageSection from "../common/PageSection";
 
-const Section1 = () => {
+const Home = () => {
   const sectionDetails = {
     title: "AestroPad",
     subtitle:
@@ -27,4 +27,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default Home;
