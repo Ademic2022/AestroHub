@@ -10,20 +10,9 @@ export async function getStaticPaths() {
   const posts = await fetchPosts();
 
   // Map fetched slugs to paths
-  // const paths = posts.map((post) => ({
-  //   params: { slug: post.node.slug },
-  // }));
-  const paths = posts.map((post) => {
-    if (post.node) {
-      return {
-        params: { slug: post.node.slug },
-      };
-    } else {
-      return {
-        params: { slug: post.slug },
-      };
-    }
-  });
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
 
   return {
     paths,
@@ -37,7 +26,7 @@ export async function getStaticProps({ params }) {
 
   // Fetch all posts except the current one
   const allPosts = await fetchPosts();
-  const filteredPosts = allPosts.filter((p) => p.node.slug !== params.slug);
+  const filteredPosts = allPosts.filter((p) => p.slug !== params.slug);
 
   return {
     props: {
@@ -48,6 +37,7 @@ export async function getStaticProps({ params }) {
 }
 
 const BlogDetails = ({ post, allPosts }) => {
+  console.log(post);
   return (
     <React.Fragment>
       <BlogDetailsChild post={post} />

@@ -13,7 +13,7 @@ import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
 
 const BlogDetailsChild = ({ post }) => {
-  const { slug, title, createdAt, content, author, featuredImage } = post.node;
+  const { slug, title, createdAt, content, author, featuredImage } = post;
   return (
     <React.Fragment>
       <Box
