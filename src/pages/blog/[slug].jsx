@@ -5,6 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import React from "react";
 import { fetchPosts, fetchPostBySlug } from "@/utils/apiCalls/fetchPosts";
 import Section7 from "@/components/homeComponents/Section7";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
   const posts = await fetchPosts();
@@ -38,6 +39,10 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   console.log(post);
+  const router = useRouter();
+  if (router.isFallback) {
+    return <h1>Loading Posts</h1>
+  }
   return (
     <React.Fragment>
       <BlogDetailsChild post={post} />
