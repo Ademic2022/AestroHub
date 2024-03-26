@@ -1,12 +1,11 @@
 import React from "react";
 import {
   Box,
-  ListItem,
   ListItemAvatar,
   Avatar,
-  ListItemText,
   Typography,
   CardMedia,
+  alpha,
 } from "@mui/material";
 import { FaCalendarAlt } from "react-icons/fa";
 import { capitalizeWords } from "@/utils/capitalizeWord";
@@ -21,53 +20,28 @@ const BlogDetailsChild = ({ post }) => {
         width={{ xs: "100%", md: "85%" }}
         sx={{ margin: "0 auto", textAlign: "center" }}
       >
-        <ListItem alignItems="center">
-          <ListItemAvatar>
-            <Avatar
-              alt={author.name}
-              src={author.photo.url}
-              sx={{ height: "80px", width: "80px" }}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            sx={{ pl: 3 }}
-            primary={
-              <Typography
-                variant="customBody"
-                color="#fff"
-                textAlign="left"
-                sx={{ fontSize: { xs: 17, md: 22 } }}
-              >
-                {capitalizeWords(author.name)}
-              </Typography>
-            }
-            secondary={
-              <Typography
-                sx={{
-                  textAlign: "left",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  gap: 1,
-                  fontSize: { xs: 14, md: 20 },
-                  color: "grey.normal",
-                }}
-              >
-                <span style={{ marginTop: "5px" }}>
-                  <FaCalendarAlt />
-                </span>
-                <span>{formatBlogDate(createdAt)}</span>
-              </Typography>
-            }
-          />
-        </ListItem>
         <Typography
-          my={2}
           variant="h2"
           textAlign="left"
           sx={{ fontSize: { xs: "30px", md: "70px" } }}
         >
           {title}
+        </Typography>
+        <Typography
+          sx={{
+            textAlign: "left",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            gap: 1,
+            fontSize: { xs: 14, md: 20 },
+            color: "grey.normal",
+          }}
+        >
+          <span style={{ marginTop: "5px" }}>
+            <FaCalendarAlt />
+          </span>
+          <span>{formatBlogDate(createdAt)}</span>
         </Typography>
         <CardMedia
           sx={{
@@ -88,6 +62,57 @@ const BlogDetailsChild = ({ post }) => {
           lineHeight={1.5}
           dangerouslySetInnerHTML={{ __html: content.html }}
         />
+        <Box
+          sx={{
+            height: "auto",
+            width: "100%",
+            bgcolor: alpha("#fff", 0.3),
+            mt: 7,
+            p: "0 12px 20px ",
+            position: "relative",
+            borderRadius: "12px",
+          }}
+        >
+          <ListItemAvatar
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "80px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              position: "absolute",
+              top: -30,
+            }}
+          >
+            <Avatar
+              alt={author.name}
+              src={author.photo.url}
+              sx={{ height: "80px", width: "80px" }}
+            />
+          </ListItemAvatar>
+          <Typography
+            pt={7}
+            variant="h2"
+            textAlign="center"
+            sx={{ fontSize: { xs: "30px", md: "30px" } }}
+          >
+            {capitalizeWords(author.name)}
+          </Typography>
+          <Typography
+            textAlign="center"
+            sx={{
+              maxWidth: "100%",
+              overflowWrap: "break-word",
+              color: "grey.lightHover",
+              fontSize: { xs: "14px", md: "18px" },
+            }}
+          >
+            {author.bio
+              ? author.bio
+              : "Alabi Damilare is an accomplished author known for his captivating storytelling across various genres. With a keen eye for detail and a gift for crafting compelling narratives, Adeeyo's works resonate with readers, leaving a lasting impact..."}
+          </Typography>
+        </Box>
       </Box>
     </React.Fragment>
   );

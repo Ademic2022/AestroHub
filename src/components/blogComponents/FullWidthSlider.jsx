@@ -21,7 +21,7 @@ import Link from "next/link";
 const FullWidthSlider = ({ latestPost }) => {
   // Determine the number of words to truncate based on screen size
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const truncateLength = isMobile ? 10 : 25;
+  const truncateLength = isMobile ? 15 : 25;
 
   const { slug, title, createdAt, content, author, featuredImage } = latestPost;
   const truncatedSummary = truncateContent(content.html, truncateLength);
@@ -128,13 +128,13 @@ const FullWidthSlider = ({ latestPost }) => {
                   {truncatedSummary}
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={6} mt={{ xs: 1, md: 4 }}>
+              <Grid item xs={12} md={6} mt={{ xs: 0, md: 4 }}>
                 <ListItem alignItems="center">
                   <ListItemAvatar>
                     <Avatar
                       alt={author.name}
                       src={author.photo.url}
-                      sx={{ height: "80px", width: "80px" }}
+                      sx={{ height: "60px", width: "60px" }}
                     />
                   </ListItemAvatar>
                   <ListItemText
@@ -161,7 +161,7 @@ const FullWidthSlider = ({ latestPost }) => {
                           color: "grey.lightActive",
                         }}
                       >
-                        <span style={{ marginTop: "5px" }}>
+                        <span style={{ marginTop: "3px" }}>
                           <FaCalendarAlt />
                         </span>
                         <span>{formatBlogDate(createdAt)}</span>
