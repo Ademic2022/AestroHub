@@ -27,7 +27,7 @@ const ClientResponseTemplate = ({ data }) => {
         </Typography>
         <Typography variant="body1">
           If you have any urgent inquiries or require immediate assistance,
-          please don't hesitate to contact us directly at{" "}
+          please dont hesitate to contact us directly at{" "}
           <Link href="mailto: aestroservices@gmail.com">Aestrohub</Link>
         </Typography>
         <Typography variant="body1">Thank you for your patience.</Typography>

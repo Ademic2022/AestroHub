@@ -34,7 +34,7 @@ const ContactTemplate = ({ data }) => {
             <Link href={`mailto:${data.email}`}>{data.email}</Link>
           </li>
           <li>
-            <strong>Company's Name:</strong> {data.companyName}
+            <strong>Company Name:</strong> {data.companyName}
           </li>
           <li>
             <strong>Budget:</strong> {data.budget}
