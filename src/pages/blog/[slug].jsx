@@ -5,6 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import React from "react";
 import { fetchPosts, fetchPostBySlug } from "@/utils/apiCalls/fetchPosts";
 import Section7 from "@/components/homeComponents/Section7";
+import { Backdrop, CircularProgress, Typography, alpha } from "@mui/material";
 import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
@@ -38,10 +39,23 @@ export async function getStaticProps({ params }) {
 }
 
 const BlogDetails = ({ post, allPosts }) => {
-  console.log(post);
   const router = useRouter();
-  if (router.isFallback) {
-    return <h1>Loading Posts</h1>
+
+  if ((router.isFallback)) {
+    return (
+      <Backdrop
+        open={true}
+        sx={{
+          color: "#fff",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+          pointerEvents: "none",
+          bgcolor: alpha("#fff", 0.4),
+        }}
+      >
+        <CircularProgress color="inherit" sx={{ mr: 2 }} />
+        <Typography color="#fff">Loading Post...</Typography>
+      </Backdrop>
+    );
   }
   return (
     <React.Fragment>

@@ -110,7 +110,7 @@ const BlogDetailsChild = ({ post }) => {
           >
             {author.bio
               ? author.bio
-              : "Alabi Damilare is an accomplished author known for his captivating storytelling across various genres. With a keen eye for detail and a gift for crafting compelling narratives, Adeeyo's works resonate with readers, leaving a lasting impact..."}
+              : "Alabi Damilare is an accomplished author known for his captivating storytelling across various genres. With a keen eye for detail and a gift for crafting compelling narratives, Damilare's works resonate with readers, leaving a lasting impact..."}
           </Typography>
         </Box>
       </Box>
