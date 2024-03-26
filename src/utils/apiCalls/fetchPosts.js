@@ -1,7 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request";
 
-const endpoint =
-  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clu3baxry08us07uwhvu0c2kx/master";
+const endpoint = process.env.GRAPHCMS_ENDPOINT;
 const graphQLClient = new GraphQLClient(endpoint);
 
 export const fetchPosts = async () => {

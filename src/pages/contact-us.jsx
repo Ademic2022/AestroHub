@@ -6,6 +6,7 @@ import {
   Grid,
   Button,
   TextField,
+  CircularProgress,
 } from "@mui/material";
 import { alpha } from "@mui/material";
 import { useForm } from "react-hook-form";
@@ -17,9 +18,14 @@ import {
   textFieldValidator,
 } from "@/utils/formValidator";
 import Link from "next/link";
+import { sendContactRequest } from "@/utils/apiCalls/requestHandler";
+import CustomToast from "@/components/common/CustomToast";
 
 const ContactUs = () => {
   const [loading, setLoading] = React.useState(false);
+  const [message, setMessage] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+
   const {
     register,
     handleSubmit,
@@ -27,9 +33,32 @@ const ContactUs = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (value) => {
-    console.log(value);
+  const onSubmit = async (values) => {
+    try {
+      setLoading(true);
+      const response = await sendContactRequest(values);
+      setMessage(
+        response.ok ? "Form Successfully Submitted!" : "Failed to submit form."
+      );
+      setOpen(true);
+      reset();
+    } catch (error) {
+      setMessage("error submitting form.");
+      setOpen(true);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  React.useEffect(() => {
+    if (open) {
+      const timeoutId = setTimeout(() => {
+        setOpen(false);
+      }, 5000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [open]);
+
   return (
     <React.Fragment>
       <Box mt={5}>
@@ -171,23 +200,28 @@ const ContactUs = () => {
               <Grid item xs={12}>
                 <Button
                   variant="outlined"
-                  tabIndex={-1}
+                  size="large"
                   type="submit"
-                  sx={{ border: "1px solid #5c5c5c" }}
-                  disabled={loading ? true : false}
+                  sx={{ border: "1px solid #5c5c5c", mb: 2 }}
+                  disabled={loading}
                   startIcon={
-                    <CardMedia
-                      component="img"
-                      image="/icons/rocket.webp"
-                      sx={{ width: 24, height: 24 }}
-                      alt="icon"
-                    />
+                    !loading ? (
+                      <CardMedia
+                        component="img"
+                        image="/icons/rocket.webp"
+                        sx={{ width: 24, height: 24 }}
+                        alt="icon"
+                      />
+                    ) : null
                   }
                 >
-                  <Typography variant="body2">
-                    {loading ? "Sending message..." : "Send us a Message"}
-                  </Typography>
+                  {loading ? (
+                    <CircularProgress size={24} />
+                  ) : (
+                    "Send us a Message"
+                  )}
                 </Button>
+                <CustomToast open={open} message={message} />
               </Grid>
             </Grid>
           </Box>
