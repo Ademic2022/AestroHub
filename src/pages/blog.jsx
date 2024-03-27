@@ -9,10 +9,13 @@ import {
   fetchFeaturedPosts,
   fetchLatestPost,
 } from "@/utils/apiCalls/fetchPosts";
+import SEO from "@/components/SEO";
+import { blogSeo } from "@/data/seo";
 
 const BlogPage = ({ latestPost, featuredPosts, posts }) => {
   return (
     <React.Fragment>
+      <SEO data={blogSeo} />
       <Box mt={5}>
         <Home />
         <FullWidthSlider latestPost={latestPost} />

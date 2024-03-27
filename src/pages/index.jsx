@@ -9,10 +9,13 @@ import Section7 from "@/components/homeComponents/Section7";
 import ArticleSlider from "@/components/common/ArticleSlider";
 import { fetchPosts } from "@/utils/apiCalls/fetchPosts";
 import { homeProps } from "@/data/articles";
+import SEO from "@/components/SEO";
+import { indexSeo } from "@/data/seo";
 
-const HomePage = ({postsData}) => {
+const HomePage = ({ postsData }) => {
   return (
     <React.Fragment>
+      <SEO data={indexSeo} />
       <Box mt={5}>
         <Home />
         <Company />

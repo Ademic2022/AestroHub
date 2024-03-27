@@ -1,3 +1,7 @@
+import React from "react";
+import { Box } from "@mui/material";
+import SEO from "@/components/SEO";
+import { servicesSeo } from "@/data/seo";
 import Company from "@/components/serviceComponents/Company";
 import Design from "@/components/serviceComponents/Design";
 import Development from "@/components/serviceComponents/Development";
@@ -6,12 +10,11 @@ import Management from "@/components/serviceComponents/Management";
 import Marketing from "@/components/serviceComponents/Marketing";
 import Offering from "@/components/serviceComponents/Offering";
 import Writing from "@/components/serviceComponents/Writing";
-import { Box } from "@mui/material";
-import React from "react";
 
 const services = () => {
   return (
     <React.Fragment>
+      <SEO data={servicesSeo}/>
       <Box mt={5}>
         <Section1 />
         <Marketing />
