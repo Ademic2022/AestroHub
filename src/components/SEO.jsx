@@ -14,7 +14,7 @@ const SEO = ({ data }) => {
         }
       />
       <meta
-        property="og:image"
+        property="og:image:height"
         content={ogImage ? ogImage : "/images/logo.png"}
       />
       {keywords && <meta name="keywords" content={keywords.join(",")} />}
