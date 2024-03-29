@@ -1,4 +1,3 @@
-
 export const sendContactRequest = async (contactData) =>
   fetch("/api/contact", {
     method: "POST",

@@ -143,3 +143,51 @@ export const fetchFeaturedPosts = async (featured) => {
     return [];
   }
 };
+
+// export const getComments = async (slug) => {
+//   const query = gql`
+//     query GetComments($slug: String!) {
+//       comments(where: { post: { slug: $slug } }) {
+//         name
+//         createdAt
+//         comment
+//       }
+//     }
+//   `;
+
+//   try {
+//     const result = await graphQLClient.request(query, { slug });
+//     // return result.comments;
+//     console.log(result.comments);
+//   } catch (error) {
+//     console.error("Error fetching featured posts:", error);
+//   }
+// };
+
+export async function getComments(slug) {
+  try {
+    const query = encodeURIComponent(`
+      query GetComments($slug: String!) {
+        comments(where: { post: { slug: $slug } }) {
+          name
+          createdAt
+          comment
+        }
+      }
+    `);
+
+    const response = await fetch(
+      `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clu3baxry08us07uwhvu0c2kx/master?query=${query}&variables={"slug":"${slug}"}`
+    );
+    const data = await response.json();
+
+    if (data && data.data && data.data.comments) {
+      return data.data.comments;
+    } else {
+      throw new Error("No comments found");
+    }
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    return [];
+  }
+}

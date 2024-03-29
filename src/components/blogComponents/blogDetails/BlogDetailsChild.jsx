@@ -10,10 +10,12 @@ import {
 import { FaCalendarAlt } from "react-icons/fa";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
-import Link from "next/link";
+import CommentForm from "./CommentForm";
+import Comments from "./Comments";
 
 const BlogDetailsChild = ({ post }) => {
   const { slug, title, createdAt, content, author, featuredImage } = post;
+
   return (
     <React.Fragment>
       <Box
@@ -113,6 +115,9 @@ const BlogDetailsChild = ({ post }) => {
               : "Alabi Damilare is an accomplished author known for his captivating storytelling across various genres. With a keen eye for detail and a gift for crafting compelling narratives, Damilare's works resonate with readers, leaving a lasting impact..."}
           </Typography>
         </Box>
+        {/* comments */}
+        <CommentForm slug={slug} />
+        <Comments slug={slug} />
       </Box>
     </React.Fragment>
   );
