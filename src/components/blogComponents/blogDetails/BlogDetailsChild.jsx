@@ -116,8 +116,8 @@ const BlogDetailsChild = ({ post }) => {
           </Typography>
         </Box>
         {/* comments */}
-        <CommentForm slug={slug} />
         <Comments slug={slug} />
+        <CommentForm slug={slug} />
       </Box>
     </React.Fragment>
   );

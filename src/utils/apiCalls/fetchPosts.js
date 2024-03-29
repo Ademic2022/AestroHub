@@ -164,11 +164,11 @@ export const fetchFeaturedPosts = async (featured) => {
 //   }
 // };
 
-export async function getComments(slug) {
+export const getComments = async (slug) => {
   try {
     const query = encodeURIComponent(`
       query GetComments($slug: String!) {
-        comments(where: { post: { slug: $slug } }) {
+        comments(where: { post: { slug: $slug } } orderBy: createdAt_DESC ) {
           name
           createdAt
           comment
@@ -190,4 +190,4 @@ export async function getComments(slug) {
     console.error("Error fetching comments:", error);
     return [];
   }
-}
+};

@@ -36,8 +36,8 @@ const Comments = ({ slug }) => {
           comments.map((comment, idx) => (
             <Paper
               key={idx}
-              elevation={5}
-              sx={{ padding: "15px 20px", borderRadius: 5 }}
+              elevation={3}
+              sx={{ padding: "15px 20px", borderRadius: 5, mb: 2 }}
             >
               <Grid container wrap="nowrap" spacing={2}>
                 <Grid item>
@@ -50,7 +50,10 @@ const Comments = ({ slug }) => {
                   >
                     {comment.name}
                   </Typography>
-                  <Typography variant="body1" sx={{ textAlign: "left" }}>
+                  <Typography
+                    variant="body1"
+                    sx={{ textAlign: "left", fontSize: { xs: 16 } }}
+                  >
                     {comment.comment}
                   </Typography>
                   <Typography
@@ -59,6 +62,7 @@ const Comments = ({ slug }) => {
                       textAlign: "left",
                       color: "gray",
                       fontStyle: "italic",
+                      fontSize: { xs: 12 },
                     }}
                   >
                     {getTimeDifference(comment.createdAt)}
@@ -68,7 +72,10 @@ const Comments = ({ slug }) => {
             </Paper>
           ))}
         {comments.length === 0 && (
-          <Typography variant="body1" sx={{ textAlign: "center" }}>
+          <Typography
+            variant="body1"
+            sx={{ textAlign: "center", fontSize: { xs: 16 } }}
+          >
             No Comment Available, be the first to comment on this post.
           </Typography>
         )}
