@@ -30,7 +30,7 @@ const AccordionExpand = () => {
     setExpanded(newExpanded ? panel : false);
   };
   return (
-    <Box width={{ md: 1280 }} sx={{ margin: "0 auto" }}>
+    <Box sx={{ margin: "0 auto" }}>
       {/* default open */}
       <Accordion defaultExpanded>
         <AccordionSummary

@@ -8,7 +8,6 @@ const FAQ = () => {
     <React.Fragment>
       <Reveal>
         <Box
-          width={{ md: 1280 }}
           sx={{ margin: "100px auto 5px", textAlign: "center" }}
         >
           <Chip

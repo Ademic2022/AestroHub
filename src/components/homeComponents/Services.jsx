@@ -7,12 +7,10 @@ const Services = ({ service, button, type }) => {
   return (
     <Box
       sx={{
-        display: "flex",
         p: "25px",
         border: "1px solid #5c5c5c",
         borderRadius: "40px",
-        margin: "0 auto",
-        textAlign: "center",
+        width: "100%",
       }}
     >
       <ScrollReveal type={type}>
@@ -22,7 +20,7 @@ const Services = ({ service, button, type }) => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            width: "1233px",
+
             borderRadius: "40px",
             border: "1.5px solid #5c5c5c",
             p: "25px",

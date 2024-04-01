@@ -27,7 +27,6 @@ const Company = () => {
           alignItems="center"
           gap={4}
           p={2}
-          width="1280px"
           sx={{
             height: "160px",
             bgcolor: "#0EAD69",

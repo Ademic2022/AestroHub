@@ -63,7 +63,7 @@ const ArticleSlider = ({ articles, props }) => {
           </Typography>
         </Box>
       </Reveal>
-      <Box sx={{ maxWidth: "1280px", mx: "auto" }}>
+      <Box sx={{ /* maxWidth: "1280px", */ mx: "auto" }}>
         <Carousel
           responsive={responsive}
           infinite={true}

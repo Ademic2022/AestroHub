@@ -11,14 +11,10 @@ const Projects = () => {
       <Reveal>
         <Box
           textAlign="center"
-          width={{
-            xs: "100%",
-            md: "65%",
-            margin: "0 auto",
+          sx={{
+            margin: "120px auto 40px auto",
             textAlign: "center",
           }}
-          mt={15}
-          mb={5}
         >
           <Chip
             sx={{
@@ -52,7 +48,7 @@ const Projects = () => {
           </Typography>
         </Box>
       </Reveal>
-      <Box width={{ md: 1280 }} sx={{ margin: "0 auto", textAlign: "center" }}>
+      <Box sx={{ margin: "0 auto", textAlign: "center" }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
@@ -60,10 +56,7 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <Grid item xs={2} sm={4} md={4} key={project.id}>
-              <ScrollReveal
-                type="first"
-                index={index}
-              >
+              <ScrollReveal type="first" index={index}>
                 <Box
                   sx={{
                     display: "flex",

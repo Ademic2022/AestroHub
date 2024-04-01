@@ -94,7 +94,7 @@ const Footer = () => {
             gap={4}
             mt={15}
             p={2}
-            width={{ xs: "max-width", md: "1280px" }}
+            // width={{ xs: "max-width", md: "1280px" }}
             sx={{
               height: { xs: "auto", md: "256px" },
               border: "1px solid #5c5c5c",
@@ -146,10 +146,10 @@ const Footer = () => {
                       },
                       "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline":
                         {
-                          borderColor: "#5c5c5c", // Set the outline color to 5c5c5c
+                          borderColor: "#5c5c5c",
                         },
                       "& .MuiInputLabel-root": {
-                        color: "#ffffff", // Set the label color to white
+                        color: "#ffffff",
                       },
                     }}
                     {...register("email", emailValidator)}
@@ -202,6 +202,7 @@ const Footer = () => {
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            style={{ overflow: "hidden" }}
           >
             <CardMedia
               sx={{ height: "318px", borderRadius: "16px", mt: 25 }}

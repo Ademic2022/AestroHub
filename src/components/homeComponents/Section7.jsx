@@ -10,9 +10,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
         alignItems="center"
         gap={4}
         p={2}
-        width={{ xs: "max-width", md: "1280px" }}
         sx={{
-          // height: "160px",
           bgcolor: bgcolor ? bgcolor : "#FF006E",
           borderRadius: "24px",
           overflowX: "auto",

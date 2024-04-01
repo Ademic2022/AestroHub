@@ -6,10 +6,7 @@ import { team } from "../../data/aboutUs";
 const Team = () => {
   return (
     <React.Fragment>
-      <Box
-        width={{ md: 1280 }}
-        sx={{ margin: "100px auto 5px", textAlign: "center" }}
-      >
+      <Box sx={{ margin: "100px auto 5px", textAlign: "center" }}>
         <Chip
           sx={{
             bgcolor: "#fff",

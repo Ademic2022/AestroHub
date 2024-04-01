@@ -5,7 +5,7 @@ import { Box, Grid, Typography, CardMedia } from "@mui/material";
 
 const AboutCard = ({ datas }) => {
   return (
-    <Box width={{ md: 1280 }} sx={{ margin: "0 auto", textAlign: "center" }}>
+    <Box sx={{ margin: "0 auto", textAlign: "center" }}>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}

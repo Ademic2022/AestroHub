@@ -5,7 +5,7 @@ import ScrollReveal from "@/utils/motion/ScrollReveal";
 
 const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
   return (
-    <Box width={{ md: 1280 }} sx={{ margin: "0 auto", textAlign: "center" }}>
+    <Box sx={{ margin: "0 auto", textAlign: "center" }}>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
