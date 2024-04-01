@@ -73,6 +73,7 @@ const Footer = () => {
             position: "relative",
             backgroundSize: "cover",
             color: "#fff",
+            overflow: "hidden",
           }}
         >
           <Box
