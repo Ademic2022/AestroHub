@@ -19,47 +19,50 @@ import { responsive } from "@/data/CarouselResponsive";
 import { truncateContent } from "@/utils/postTruncator";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
+import Reveal from "@/utils/motion/Reveal";
 
 const ArticleSlider = ({ articles, props }) => {
   return (
     <React.Fragment>
-      <Box
-        width={{ xs: "100%", md: "65%" }}
-        mt={15}
-        sx={{ margin: "100px auto 5px", textAlign: "center" }}
-        mb={5}
-      >
-        <Chip
-          sx={{
-            bgcolor: "#fff",
-            fontSize: "18px",
-            fontFamily: "Outfit",
-            color: props.color,
-            padding: "5px",
-            mb: "20px",
-          }}
-          icon={
-            <CardMedia
-              component="img"
-              image="/icons/Saturn.webp"
-              sx={{
-                width: 24,
-                height: 24,
-                objectFit: "contain",
-              }}
-              alt="icon"
-            />
-          }
-          label={props.label}
-        />
-        <Typography
-          mb={3}
-          variant="h2"
-          sx={{ fontSize: { xs: "32px", md: "56px" } }}
+      <Reveal>
+        <Box
+          width={{ xs: "100%", md: "65%" }}
+          mt={15}
+          sx={{ margin: "100px auto 5px", textAlign: "center" }}
+          mb={5}
         >
-          {props.sectionHeader}
-        </Typography>
-      </Box>
+          <Chip
+            sx={{
+              bgcolor: "#fff",
+              fontSize: "18px",
+              fontFamily: "Outfit",
+              color: props.color,
+              padding: "5px",
+              mb: "20px",
+            }}
+            icon={
+              <CardMedia
+                component="img"
+                image="/icons/Saturn.webp"
+                sx={{
+                  width: 24,
+                  height: 24,
+                  objectFit: "contain",
+                }}
+                alt="icon"
+              />
+            }
+            label={props.label}
+          />
+          <Typography
+            mb={3}
+            variant="h2"
+            sx={{ fontSize: { xs: "32px", md: "56px" } }}
+          >
+            {props.sectionHeader}
+          </Typography>
+        </Box>
+      </Reveal>
       <Box sx={{ maxWidth: "1280px", mx: "auto" }}>
         <Carousel
           responsive={responsive}

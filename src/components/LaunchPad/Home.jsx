@@ -14,6 +14,7 @@ const Home = () => {
         my: 3,
         objectFit: "cover",
       },
+      imgwidth:"100%",
       btn: {
         width: "200px",
         height: "50px",

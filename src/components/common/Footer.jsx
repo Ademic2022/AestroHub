@@ -15,6 +15,7 @@ import Products from "./footerComponents/Products";
 import Socials from "./footerComponents/Socials";
 import { emailValidator } from "@/utils/formValidator";
 import CustomToast from "./CustomToast";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const [message, setMessage] = React.useState(null);
@@ -177,15 +178,14 @@ const Footer = () => {
               position: "absolute",
               top: { xs: 500, md: 0 },
               left: { xs: "20px", md: "726px" },
-              height: {xs:"840px", md:"1040px"},
+              height: { xs: "840px", md: "1040px" },
               objectFit: "cover",
               width: { xs: "300px", md: "580px" },
               pointerEvents: "none",
             }}
             image="/images/rocket.webp"
-            title="Article Image"
+            title="Footer Image"
           />
-
           <CardMedia
             sx={{
               position: "absolute",
@@ -196,14 +196,19 @@ const Footer = () => {
               // mt: 25,
             }}
             image="/images/logo.webp"
-            title="Article Image"
+            title="Footer Logo"
           />
 
-          <CardMedia
-            sx={{ height: "318px", borderRadius: "16px", mt: 25 }}
-            image="/images/Smoke.webp"
-            title="Article Image"
-          />
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          >
+            <CardMedia
+              sx={{ height: "318px", borderRadius: "16px", mt: 25 }}
+              image="/images/Smoke.webp"
+              title="Footer Image"
+            />
+          </motion.div>
         </Box>
       </Container>
     </React.Fragment>

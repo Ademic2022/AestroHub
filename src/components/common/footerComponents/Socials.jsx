@@ -7,6 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import Link from "next/link";
 import { contacts } from "@/data/footer";
+import { motion } from "framer-motion";
 
 const Socials = () => {
   const socialIcons = (item) => {
@@ -26,6 +27,14 @@ const Socials = () => {
     }
   };
 
+  const fadeInAnimationVariant = {
+    initial: { opacity: 0, y: 100 },
+    animate: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.05 * index },
+    }),
+  };
   return (
     <Box
       sx={{
@@ -46,38 +55,46 @@ const Socials = () => {
         }}
         label="Contacts"
       />
-      {contacts.map((contact) => (
-        <Box key={contact.id} sx={{ cursor: "pointer" }}>
-          <Button
-            component={Link}
-            href={
-              contact.social === "Email"
-                ? `mailto:${contact.link}`
-                : contact.link
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              textTransform: "capitalize",
-              m: 0,
-              p: 0,
-              color: "#fff",
-              height: {xs:"40px", md:"auto"},
-            }}
-          >
-            <Box sx={{ fontSize: 25, mr: 1, pt: 1 }}>
-              {socialIcons(contact.social)}
-            </Box>
-            <Typography
-              variant="body"
+      {contacts.map((contact, index) => (
+        <motion.div
+          key={contact.id}
+          variants={fadeInAnimationVariant}
+          initial="initial"
+          whileInView="animate"
+          custom={index}
+        >
+          <Box sx={{ cursor: "pointer" }}>
+            <Button
+              component={Link}
+              href={
+                contact.social === "Email"
+                  ? `mailto:${contact.link}`
+                  : contact.link
+              }
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                fontSize: { xs: "15px", md: "25px" },
+                textTransform: "capitalize",
+                m: 0,
+                p: 0,
+                color: "#fff",
+                height: { xs: "40px", md: "auto" },
               }}
             >
-              {contact.social}
-            </Typography>
-          </Button>
-        </Box>
+              <Box sx={{ fontSize: 25, mr: 1, pt: 1 }}>
+                {socialIcons(contact.social)}
+              </Box>
+              <Typography
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "25px",
+                }}
+              >
+                {contact.social}
+              </Typography>
+            </Button>
+          </Box>
+        </motion.div>
       ))}
     </Box>
   );

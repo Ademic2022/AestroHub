@@ -1,6 +1,7 @@
 import React from "react";
 import { alpha } from "@mui/system";
 import { Box, Grid, Typography, CardMedia } from "@mui/material";
+import ScrollReveal from "@/utils/motion/ScrollReveal";
 
 const Card = ({ datas }) => {
   return (
@@ -10,8 +11,9 @@ const Card = ({ datas }) => {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 1, sm: 8, md: 12 }}
       >
-        {datas.map((project) => (
+        {datas.map((project, idx) => (
           <Grid item xs={2} sm={4} md={4} key={project.id}>
+            <ScrollReveal type="first" index={idx}>
             <Box
               sx={{
                 display: "flex",
@@ -61,6 +63,7 @@ const Card = ({ datas }) => {
                 {project.desc}
               </Typography>
             </Box>
+            </ScrollReveal>
           </Grid>
         ))}
       </Grid>

@@ -1,8 +1,17 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip } from "@mui/material";
 import { services } from "@/data/services";
+import { motion } from "framer-motion";
 
 const Services = () => {
+  const fadeInAnimationVariant = {
+    initial: { opacity: 0, y: 100 },
+    animate: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.05 * index },
+    }),
+  };
   return (
     <Box
       sx={{
@@ -23,19 +32,23 @@ const Services = () => {
         }}
         label="What we do"
       />
-      {services.map((service) => (
-        <Typography
+      {services.map((service, index) => (
+        <motion.div
           key={service.id}
-          mb={{ xs: 2, md: 3 }}
-          variant="body"
-          sx={{
+          initial="initial"
+          variants={fadeInAnimationVariant}
+          whileInView="animate"
+          custom={index}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: { xs: "15px", md: "28px" },
+            fontSize: "25px",
             color: "grey.lightActive",
+            lineHeight: "43.75px",
           }}
         >
-          {service.title}
-        </Typography>
+          <Typography variant="body">{service.title}</Typography>
+        </motion.div>
       ))}
     </Box>
   );

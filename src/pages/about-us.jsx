@@ -7,10 +7,13 @@ import Products from "@/components/AboutComponent/Products";
 import Team from "@/components/AboutComponent/Team";
 import FAQ from "@/components/AboutComponent/FAQ";
 import Section7 from "@/components/homeComponents/Section7";
+import SEO from "@/components/SEO";
+import { aboutUsSeo } from "@/data/seo";
 
 const AboutUs = () => {
   return (
     <React.Fragment>
+      <SEO data={aboutUsSeo} />
       <Box mt={5}>
         <Home />
         <Section2 />

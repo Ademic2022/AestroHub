@@ -24,7 +24,7 @@ import NavTracker from "@/utils/NavTracker";
 import { navItems } from "@/data/navlinks";
 import { itemVariants, listVariants } from "@/data/motionProps/navbar";
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 const ResponsiveNavBar = (props) => {
   const { window } = props;
@@ -50,7 +50,7 @@ const ResponsiveNavBar = (props) => {
   }, [router.pathname]);
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", px:2 }}>
       <Box sx={{ flexGrow: 1 }} component={Link} href="/">
         <CardMedia
           component="img"

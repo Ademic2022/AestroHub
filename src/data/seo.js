@@ -70,6 +70,18 @@ export const launchpadSeo = {
 
 export const aboutUsSeo = {
   title: "AboutUs",
+  keywords: [
+    "about us",
+    "our mission",
+    "our vision",
+    "the problem, the solution",
+    "Collaboration",
+    "Co-Creation",
+    "Workforce",
+    "Tripple A",
+    "James",
+    "OPD",
+  ],
   description:
     "Learn about AestroHub mission and vision. How our services are tailored to align Web3 founders, service providers, investors, and communities together.",
 };

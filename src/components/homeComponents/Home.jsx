@@ -16,7 +16,9 @@ const Home = () => {
         height: "631.95px",
         objectFit: "contain",
         transform: "rotate(180deg)",
+        borderRadius: "50%",
       },
+
       btn: {
         width: "200px",
         height: "50px",

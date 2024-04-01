@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Divider, Paper, Grid, Avatar } from "@mui/material";
 import { getComments } from "@/utils/apiCalls/fetchPosts";
 import { getTimeDifference } from "@/utils/timeDifference";
+import { motion } from "framer-motion";
 
 const Comments = ({ slug }) => {
   const [comments, setComments] = React.useState([]);
@@ -34,42 +35,47 @@ const Comments = ({ slug }) => {
         <Divider sx={{ mb: 2 }}>{comments.length} Comments</Divider>
         {comments.length > 0 &&
           comments.map((comment, idx) => (
-            <Paper
-              key={idx}
-              elevation={3}
-              sx={{ padding: "15px 20px", borderRadius: 5, mb: 2 }}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 12 }}
             >
-              <Grid container wrap="nowrap" spacing={2}>
-                <Grid item>
-                  <Avatar alt={comment.name} />
+              <Paper
+                key={idx}
+                elevation={3}
+                sx={{ padding: "15px 20px", borderRadius: 5, mb: 2 }}
+              >
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid item>
+                    <Avatar alt={comment.name} />
+                  </Grid>
+                  <Grid justifyContent="left" item xs zeroMinWidth>
+                    <Typography
+                      variant="h6"
+                      sx={{ textAlign: "left", marginBottom: 0 }}
+                    >
+                      {comment.name}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{ textAlign: "left", fontSize: { xs: 16 } }}
+                    >
+                      {comment.comment}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        textAlign: "left",
+                        color: "gray",
+                        fontStyle: "italic",
+                        fontSize: { xs: 12 },
+                      }}
+                    >
+                      {getTimeDifference(comment.createdAt)}
+                    </Typography>
+                  </Grid>
                 </Grid>
-                <Grid justifyContent="left" item xs zeroMinWidth>
-                  <Typography
-                    variant="h6"
-                    sx={{ textAlign: "left", marginBottom: 0 }}
-                  >
-                    {comment.name}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{ textAlign: "left", fontSize: { xs: 16 } }}
-                  >
-                    {comment.comment}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      textAlign: "left",
-                      color: "gray",
-                      fontStyle: "italic",
-                      fontSize: { xs: 12 },
-                    }}
-                  >
-                    {getTimeDifference(comment.createdAt)}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Paper>
+              </Paper>
+            </motion.div>
           ))}
         {comments.length === 0 && (
           <Typography

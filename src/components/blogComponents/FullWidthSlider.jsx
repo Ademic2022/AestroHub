@@ -16,6 +16,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { truncateContent } from "@/utils/postTruncator";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
+import Reveal from "@/utils/motion/Reveal";
 import Link from "next/link";
 
 const FullWidthSlider = ({ latestPost }) => {
@@ -27,41 +28,43 @@ const FullWidthSlider = ({ latestPost }) => {
   const truncatedSummary = truncateContent(content.html, truncateLength);
   return (
     <React.Fragment>
-      <Box
-        width={{ xs: "100%", md: "65%" }}
-        sx={{ margin: "100px auto 5px", textAlign: "center" }}
-      >
-        <Chip
-          sx={{
-            bgcolor: "#fff",
-            fontSize: "18px",
-            fontFamily: "Outfit",
-            color: "#0EAD69",
-            padding: "5px",
-            mb: "20px",
-          }}
-          icon={
-            <CardMedia
-              component="img"
-              image="/icons/Saturn.webp"
-              sx={{
-                width: 24,
-                height: 24,
-                objectFit: "contain",
-              }}
-              alt="icon"
-            />
-          }
-          label="AestroBlog"
-        />
-        <Typography
-          mb={3}
-          variant="h2"
-          sx={{ fontSize: { xs: "32px", md: "56px" } }}
+      <Reveal>
+        <Box
+          width={{ xs: "100%", md: "65%" }}
+          sx={{ margin: "100px auto 5px", textAlign: "center" }}
         >
-          Read our latest Articles
-        </Typography>
-      </Box>
+          <Chip
+            sx={{
+              bgcolor: "#fff",
+              fontSize: "18px",
+              fontFamily: "Outfit",
+              color: "#0EAD69",
+              padding: "5px",
+              mb: "20px",
+            }}
+            icon={
+              <CardMedia
+                component="img"
+                image="/icons/Saturn.webp"
+                sx={{
+                  width: 24,
+                  height: 24,
+                  objectFit: "contain",
+                }}
+                alt="icon"
+              />
+            }
+            label="AestroBlog"
+          />
+          <Typography
+            mb={3}
+            variant="h2"
+            sx={{ fontSize: { xs: "32px", md: "56px" } }}
+          >
+            Read our latest Articles
+          </Typography>
+        </Box>
+      </Reveal>
       <Box
         sx={{
           maxWidth: "1280px",
@@ -105,9 +108,9 @@ const FullWidthSlider = ({ latestPost }) => {
                   gutterBottom
                   variant="customBody"
                   textAlign="left"
-                  my={{ xs: 0, md: 2 }}
                   sx={{
                     fontSize: { xs: "32", md: "36px" },
+                    marginY: { xs: 0, md: 2 },
                   }}
                 >
                   <Link

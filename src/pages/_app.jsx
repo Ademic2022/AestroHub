@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Container component="main" maxWidth="xl" sx={{ mb: 2, p: 3 }}>
         <Box
           className="content"
-          style={{ color: "#fff", marginTop: "80px" }}
+          style={{ color: "#fff", marginTop: "80px", overflow: "hidden" }}
         >
           <ThemeToggleProvider>
             <Component {...pageProps} />

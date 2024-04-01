@@ -1,8 +1,17 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip } from "@mui/material";
 import { products } from "@/data/footer";
+import { motion } from "framer-motion";
 
 const Products = () => {
+  const fadeInAnimationVariant = {
+    initial: { opacity: 0, y: 100 },
+    animate: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.05 * index },
+    }),
+  };
   return (
     <Box
       sx={{
@@ -23,19 +32,23 @@ const Products = () => {
         }}
         label="Our Products"
       />
-      {products.map((product) => (
-        <Typography
+      {products.map((product, index) => (
+        <motion.div
           key={product.id}
-          mb={{ xs: 2, md: 3 }}
-          variant="body"
-          sx={{
+          initial="initial"
+          variants={fadeInAnimationVariant}
+          whileInView="animate"
+          custom={index}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: { xs: "15px", md: "28px" },
+            fontSize: "25px",
             color: "grey.lightActive",
+            lineHeight: "43.75px",
           }}
         >
-          {product.title}
-        </Typography>
+          <Typography variant="body">{product.title}</Typography>
+        </motion.div>
       ))}
     </Box>
   );

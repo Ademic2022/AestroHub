@@ -5,7 +5,7 @@ import { servicesSeo } from "@/data/seo";
 import Company from "@/components/serviceComponents/Company";
 import Design from "@/components/serviceComponents/Design";
 import Development from "@/components/serviceComponents/Development";
-import Section1 from "@/components/serviceComponents/Home";
+import Home from "@/components/serviceComponents/Home";
 import Management from "@/components/serviceComponents/Management";
 import Marketing from "@/components/serviceComponents/Marketing";
 import Offering from "@/components/serviceComponents/Offering";
@@ -16,7 +16,7 @@ const services = () => {
     <React.Fragment>
       <SEO data={servicesSeo}/>
       <Box mt={5}>
-        <Section1 />
+        <Home />
         <Marketing />
         <Design />
         <Management />

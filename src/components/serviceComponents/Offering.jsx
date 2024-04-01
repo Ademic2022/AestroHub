@@ -1,45 +1,49 @@
 import React from "react";
 import { Box, Typography, CardMedia, Chip, Grid } from "@mui/material";
 import CustomButton from "../common/CustomButton";
+import ScrollReveal from "@/utils/motion/ScrollReveal";
+import Reveal from "@/utils/motion/Reveal";
 
 const Offering = () => {
   return (
     <React.Fragment>
-      <Box
-        width={{ md: 1280 }}
-        sx={{ margin: "100px auto 5px", textAlign: "center" }}
-      >
-        <Chip
-          sx={{
-            bgcolor: "#fff",
-            fontSize: "18px",
-            fontFamily: "Outfit",
-            color: "#FF006E",
-            padding: "5px",
-            mb: "20px",
-          }}
-          icon={
-            <CardMedia
-              component="img"
-              image="/icons/Saturn.webp"
-              sx={{
-                width: 24,
-                height: 24,
-                objectFit: "contain",
-              }}
-              alt="icon"
-            />
-          }
-          label="What we Offer"
-        />
-        <Typography
-          mb={3}
-          variant="h2"
-          sx={{ fontSize: { xs: "32px", md: "56px" } }}
+      <Reveal>
+        <Box
+          width={{ md: 1280 }}
+          sx={{ margin: "100px auto 5px", textAlign: "center" }}
         >
-          Our Offerings
-        </Typography>
-      </Box>
+          <Chip
+            sx={{
+              bgcolor: "#fff",
+              fontSize: "18px",
+              fontFamily: "Outfit",
+              color: "#FF006E",
+              padding: "5px",
+              mb: "20px",
+            }}
+            icon={
+              <CardMedia
+                component="img"
+                image="/icons/Saturn.webp"
+                sx={{
+                  width: 24,
+                  height: 24,
+                  objectFit: "contain",
+                }}
+                alt="icon"
+              />
+            }
+            label="What we Offer"
+          />
+          <Typography
+            mb={3}
+            variant="h2"
+            sx={{ fontSize: { xs: "32px", md: "56px" } }}
+          >
+            Our Offerings
+          </Typography>
+        </Box>
+      </Reveal>
       <Box width={{ md: 1280 }} sx={{ margin: "0 auto", textAlign: "center" }}>
         <Grid container justifyContent="center" alignItems="center">
           <Grid
@@ -51,6 +55,7 @@ const Offering = () => {
             pr={{ md: 1, xs: 0 }}
             pb={{ md: 0, xs: 2 }}
           >
+            <ScrollReveal type="first">
             <Box
               sx={{
                 backgroundImage: `url("/images/image4.webp")`,
@@ -123,6 +128,7 @@ const Offering = () => {
                 <CustomButton btnText="Hire a Professional" to="/contact-us" />
               </Box>
             </Box>
+            </ScrollReveal>
           </Grid>
           <Grid
             item
@@ -132,6 +138,7 @@ const Offering = () => {
             alignItems="center"
             pl={{ md: 1, xs: 0 }}
           >
+            <ScrollReveal>
             <Box
               sx={{
                 backgroundImage: `url("/images/image4.webp")`,
@@ -207,6 +214,7 @@ const Offering = () => {
                 <CustomButton btnText="Hire the team" to="/contact-us" />
               </Box>
             </Box>
+            </ScrollReveal>
           </Grid>
         </Grid>
       </Box>

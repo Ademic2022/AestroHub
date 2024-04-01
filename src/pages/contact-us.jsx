@@ -20,6 +20,8 @@ import {
 import Link from "next/link";
 import { sendContactRequest } from "@/utils/apiCalls/requestHandler";
 import CustomToast from "@/components/common/CustomToast";
+import SEO from "@/components/SEO";
+import { contactUsSeo } from "@/data/seo";
 
 const ContactUs = () => {
   const [loading, setLoading] = React.useState(false);
@@ -61,6 +63,7 @@ const ContactUs = () => {
 
   return (
     <React.Fragment>
+      <SEO data={contactUsSeo} />
       <Box mt={5}>
         <Box
           textAlign="center"

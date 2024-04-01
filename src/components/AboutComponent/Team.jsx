@@ -41,7 +41,7 @@ const Team = () => {
           The Team
         </Typography>
       </Box>
-      <AboutCard1 cardHeight="455px" datas={team} />
+      <AboutCard1 animationDirection="first" cardHeight="455px" datas={team} />
     </React.Fragment>
   );
 };
