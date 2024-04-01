@@ -36,11 +36,11 @@ const Comments = ({ slug }) => {
         {comments.length > 0 &&
           comments.map((comment, idx) => (
             <motion.div
+              key={idx}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 12 }}
             >
               <Paper
-                key={idx}
                 elevation={3}
                 sx={{ padding: "15px 20px", borderRadius: 5, mb: 2 }}
               >
