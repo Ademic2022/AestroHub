@@ -37,9 +37,7 @@ const Footer = () => {
   React.useEffect(() => {
     const checkTokenValidity = async () => {
       const tokenObject = getTokenFromLocalStorage();
-      if (tokenObject && !isTokenExpired(tokenObject)) {
-        console.log("Access token is valid.");
-      } else {
+      if (!tokenObject && isTokenExpired(tokenObject)) {
         console.log("Access token has expired or is not present.");
         await refreshAccessToken();
       }

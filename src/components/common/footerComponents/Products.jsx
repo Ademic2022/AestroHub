@@ -19,7 +19,7 @@ const Products = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start",
-        mt: 5,
+        mt: { md: "0", xs: 5 },
       }}
     >
       <Chip
