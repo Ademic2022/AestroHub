@@ -34,6 +34,20 @@ const Footer = () => {
     reset,
   } = useForm();
 
+  React.useEffect(() => {
+    const checkTokenValidity = async () => {
+      const tokenObject = getTokenFromLocalStorage();
+      if (tokenObject && !isTokenExpired(tokenObject)) {
+        console.log("Access token is valid.");
+      } else {
+        console.log("Access token has expired or is not present.");
+        await refreshAccessToken();
+      }
+    };
+
+    checkTokenValidity();
+  }, []);
+
   const onSubmit = async (value) => {
     setLoading(true);
     const email = value.email;
@@ -41,7 +55,7 @@ const Footer = () => {
       console.log("Invalid or expired access token. Refreshing token...");
       await refreshAccessToken();
     }
-    
+
     const tokenObject = getTokenFromLocalStorage();
     const tokenStr = tokenObject.data.access_token;
     const requestData = {
@@ -234,7 +248,11 @@ const Footer = () => {
             style={{ overflow: "hidden" }}
           >
             <CardMedia
-              sx={{ height: "318px", borderRadius: "16px", mt: {md: 25,  xs: 5}}}
+              sx={{
+                height: "318px",
+                borderRadius: "16px",
+                mt: { md: 25, xs: 5 },
+              }}
               image="/images/Smoke.webp"
               title="Footer Image"
             />

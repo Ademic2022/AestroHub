@@ -39,6 +39,20 @@ const ContactUs = () => {
     reset,
   } = useForm();
 
+  React.useEffect(() => {
+    const checkTokenValidity = async () => {
+      const tokenObject = getTokenFromLocalStorage();
+      if (tokenObject && !isTokenExpired(tokenObject)) {
+        console.log("Access token is valid.");
+      } else {
+        console.log("Access token has expired or is not present.");
+        await refreshAccessToken();
+      }
+    };
+
+    checkTokenValidity();
+  }, []);
+
   const onSubmit = async (values) => {
     setLoading(true);
     const { email, name, companyName, company, budget } = values;
