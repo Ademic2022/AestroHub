@@ -67,7 +67,7 @@ const Services = ({ service, button, type }) => {
                 <Typography
                   mb={3}
                   variant="body2"
-                  textAlign="justify"
+                  textAlign="left"
                   sx={{
                     fontSize: { xs: "56px", md: "22px" },
                     fontWeight: 400,

@@ -16,6 +16,11 @@ import Socials from "./footerComponents/Socials";
 import { emailValidator } from "@/utils/formValidator";
 import CustomToast from "./CustomToast";
 import { motion } from "framer-motion";
+import {
+  getTokenFromLocalStorage,
+  isTokenExpired,
+  refreshAccessToken,
+} from "@/utils/zoho/helperFunctions";
 
 const Footer = () => {
   const [message, setMessage] = React.useState(null);
@@ -32,22 +37,44 @@ const Footer = () => {
   const onSubmit = async (value) => {
     setLoading(true);
     const email = value.email;
+    if (isTokenExpired(getTokenFromLocalStorage())) {
+      console.log("Invalid or expired access token. Refreshing token...");
+      await refreshAccessToken();
+    }
+    
+    const tokenObject = getTokenFromLocalStorage();
+    const tokenStr = tokenObject.data.access_token;
+    const requestData = {
+      data: [
+        {
+          Name: "Newsletter",
+          Email: email,
+        },
+      ],
+    };
     try {
-      const response = await fetch("/api/newsletter", {
+      const response = await fetch("/api/zoho/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          ...requestData,
+          accessToken: tokenStr,
+        }),
       });
       const data = await response.json();
-      setMessage(
-        response.ok
-          ? "Successfully subscribed to newsletter!"
-          : data.error || "Failed to subscribe to newsletter."
-      );
-      setOpen(true);
-      reset();
+      const { message, code } = data?.responseData?.data[0] || {};
+
+      if (code === "SUCCESS") {
+        setMessage("Successfully subscribed to newsletter!");
+        setOpen(true);
+        reset();
+      } else {
+        setMessage(message);
+        setOpen(true);
+        reset();
+      }
     } catch (error) {
       setMessage("Failed to subscribe to newsletter.");
       setOpen(true);
@@ -176,6 +203,7 @@ const Footer = () => {
           </Box>
           <CardMedia
             sx={{
+              display: { md: "block", xs: "none" },
               position: "absolute",
               top: { xs: 500, md: 0 },
               left: { xs: "20px", md: "726px" },
@@ -206,7 +234,7 @@ const Footer = () => {
             style={{ overflow: "hidden" }}
           >
             <CardMedia
-              sx={{ height: "318px", borderRadius: "16px", mt: 25 }}
+              sx={{ height: "318px", borderRadius: "16px", mt: {md: 25,  xs: 5}}}
               image="/images/Smoke.webp"
               title="Footer Image"
             />

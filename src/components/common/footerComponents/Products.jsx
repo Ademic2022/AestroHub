@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, CardMedia, Chip } from "@mui/material";
+import { Box, Typography, Chip } from "@mui/material";
 import { products } from "@/data/footer";
 import { motion } from "framer-motion";
 
@@ -19,6 +19,7 @@ const Products = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start",
+        mt: 5,
       }}
     >
       <Chip

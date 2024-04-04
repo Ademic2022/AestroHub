@@ -62,7 +62,7 @@ const AboutCard = ({ datas }) => {
                 <Typography
                   my={{ xs: 1, md: 4 }}
                   variant="body"
-                  sx={{ fontSize: { xs: "32px", md: "56px" } }}
+                  sx={{ fontSize: { xs: "32px", md: "56px", } }}
                 >
                   {project.title}
                 </Typography>

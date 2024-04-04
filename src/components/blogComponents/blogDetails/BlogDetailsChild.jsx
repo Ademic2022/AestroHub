@@ -70,6 +70,7 @@ const BlogDetailsChild = ({ post }) => {
             width: "100%",
             bgcolor: alpha("#fff", 0.3),
             mt: 7,
+            mb:5,
             p: "0 12px 20px ",
             position: "relative",
             borderRadius: "12px",

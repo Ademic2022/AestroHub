@@ -120,7 +120,7 @@ export const developments = [
     id: 2,
     title: "Product Development",
     img: "/icons/mask.webp",
-    desc: "Drive growth and expand your business with strategic planning, market analysis, and partnership building to maximize opportunities and increase revenue.",
+    desc: "We bring your ideas to life with innovative product design, development, and testing, ensuring high-quality products that meet customer needs and market demands. Including games, virtual worlds, websites, and other products.",
   },
   {
     id: 3,

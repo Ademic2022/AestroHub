@@ -11,8 +11,6 @@ const ScrollReveal = ({ children, type, index }) => {
   useEffect(() => {
     if (isInView) {
       controls.start("visible");
-    } else {
-      controls.start("hidden");
     }
   }, [isInView, controls]);
 

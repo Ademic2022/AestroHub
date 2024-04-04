@@ -18,10 +18,14 @@ import {
   textFieldValidator,
 } from "@/utils/formValidator";
 import Link from "next/link";
-import { sendContactRequest } from "@/utils/apiCalls/requestHandler";
 import CustomToast from "@/components/common/CustomToast";
 import SEO from "@/components/SEO";
 import { contactUsSeo } from "@/data/seo";
+import {
+  getTokenFromLocalStorage,
+  isTokenExpired,
+  refreshAccessToken,
+} from "@/utils/zoho/helperFunctions";
 
 const ContactUs = () => {
   const [loading, setLoading] = React.useState(false);
@@ -36,16 +40,53 @@ const ContactUs = () => {
   } = useForm();
 
   const onSubmit = async (values) => {
+    setLoading(true);
+    const { email, name, companyName, company, budget } = values;
+    if (isTokenExpired(getTokenFromLocalStorage())) {
+      console.log("Invalid or expired access token. Refreshing token...");
+      await refreshAccessToken();
+    }
+
+    const tokenObject = getTokenFromLocalStorage();
+    const tokenStr = tokenObject.data.access_token;
+    const requestData = {
+      data: [
+        {
+          Last_Name: name,
+          Email: email,
+          Company_Name: companyName,
+          Budget: budget,
+          About_Company: company,
+        },
+      ],
+    };
+
     try {
-      setLoading(true);
-      const response = await sendContactRequest(values);
-      setMessage(
-        response.ok ? "Form Successfully Submitted!" : "Failed to submit form."
-      );
-      setOpen(true);
-      reset();
+      const response = await fetch("/api/zoho/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...requestData,
+          accessToken: tokenStr,
+        }),
+      });
+
+      const data = await response.json();
+      const { message, code } = data?.responseData?.data[0] || {};
+
+      if (code === "SUCCESS") {
+        setMessage("Contact Form Successfully Submitted!");
+        setOpen(true);
+        reset();
+      } else {
+        setMessage(message);
+        setOpen(true);
+        reset();
+      }
     } catch (error) {
-      setMessage("error submitting form.");
+      setMessage("Failed to submit form.");
       setOpen(true);
     } finally {
       setLoading(false);

@@ -42,6 +42,7 @@ const Socials = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start",
+        mt: 5,
       }}
     >
       <Chip
