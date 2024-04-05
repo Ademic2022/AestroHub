@@ -53,7 +53,7 @@ const Card = ({ datas }) => {
                 </Typography>
                 <Typography
                   my={2}
-                  px={5}
+                  px={{ xs: 2, md: 5 }}
                   variant="body2"
                   sx={{
                     fontSize: { xs: "15px", md: "18px" },
