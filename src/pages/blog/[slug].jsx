@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   const router = useRouter();
-  const { title, content, featuredImage } = post;
+  const { title, content, featuredImage } = post || {};
   const seoData = {
     title: title,
     description: truncateContent(content.html, 40),
