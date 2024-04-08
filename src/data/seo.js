@@ -21,7 +21,7 @@ export const indexSeo = {
     "Decentralized Protocols",
   ],
   description:
-    "Navigating the uncharted waters of Web3 can be daunting. You need a clear roadmap to guide them through complex challenges, capitalize on emerging opportunities, and build sustainable success.",
+    "We're not just an agency, we're a launchpad. A cross-functional, all-in-one service provider for everything you need to propel your Web3 project to the stars.",
 };
 
 export const servicesSeo = {
