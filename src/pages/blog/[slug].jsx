@@ -42,12 +42,12 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   const router = useRouter();
-  const { title, content, featuredImage } = post || {};
-  const seoData = {
-    title: title,
-    description: truncateContent(content.html, 40),
-    ogImage: featuredImage.url,
-  };
+  // const { title, content, featuredImage } = post;
+  // const seoData = {
+  //   title: title,
+  //   description: truncateContent(content.html, 40),
+  //   ogImage: featuredImage.url,
+  // };
 
   if (router.isFallback) {
     return (
@@ -67,7 +67,7 @@ const BlogDetails = ({ post, allPosts }) => {
   }
   return (
     <React.Fragment>
-      <SEO data={seoData} />
+      {/* <SEO data={seoData} /> */}
       <BlogDetailsChild post={post} />
       <ArticleSlider props={prevProps} articles={allPosts} />
       <Section7 />
