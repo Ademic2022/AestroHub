@@ -1,12 +1,14 @@
 import BlogDetailsChild from "@/components/blogComponents/blogDetails/BlogDetailsChild";
 import ArticleSlider from "@/components/common/ArticleSlider";
-import { articles, prevProps } from "@/data/articles";
+import { prevProps } from "@/data/articles";
+import SEO from "@/components/SEO";
 import "react-multi-carousel/lib/styles.css";
 import React from "react";
 import { fetchPosts, fetchPostBySlug } from "@/utils/apiCalls/fetchPosts";
 import Section7 from "@/components/homeComponents/Section7";
 import { Backdrop, CircularProgress, Typography, alpha } from "@mui/material";
 import { useRouter } from "next/router";
+import { truncateContent } from "@/utils/postTruncator";
 
 export async function getStaticPaths() {
   const posts = await fetchPosts();
@@ -40,8 +42,14 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   const router = useRouter();
+  const { title, content, featuredImage } = post;
+  const seoData = {
+    title: title,
+    description: truncateContent(content.html, 40),
+    ogImage: featuredImage.url,
+  };
 
-  if ((router.isFallback)) {
+  if (router.isFallback) {
     return (
       <Backdrop
         open={true}
@@ -59,6 +67,7 @@ const BlogDetails = ({ post, allPosts }) => {
   }
   return (
     <React.Fragment>
+      <SEO data={seoData} />
       <BlogDetailsChild post={post} />
       <ArticleSlider props={prevProps} articles={allPosts} />
       <Section7 />
