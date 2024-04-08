@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, CardMedia } from "@mui/material";
 import CustomButton from "./CustomButton";
 import Reveal from "@/utils/motion/Reveal";
@@ -9,10 +9,19 @@ import ScrollReveal from "@/utils/motion/ScrollReveal";
 const PageSection = ({ sectionDetails, button }) => {
   const { title, subtitle, btnText, img, config, destination } = sectionDetails;
   const subtitles = splitStrings(subtitle);
+  const [staggered, setStaggered] = useState(false);
+
   const charVariants = {
     hidden: { opacity: 0 },
     reveal: { opacity: 1 },
   };
+
+  const handleStagger = () => {
+    if (!staggered) {
+      setStaggered(true); // Set staggering to true only once
+    }
+  };
+
   return (
     <React.Fragment>
       <ScrollReveal type="first">
@@ -32,8 +41,9 @@ const PageSection = ({ sectionDetails, button }) => {
           </Reveal>
           <motion.div
             initial="hidden"
-            whileInView="reveal"
+            whileInView={staggered ? false : "reveal"} // Only stagger if not already staggered
             transition={{ staggerChildren: 0.01 }}
+            onAnimationComplete={handleStagger} // Callback to set staggering to true after first animation
           >
             <Typography
               gutterBottom
@@ -45,7 +55,6 @@ const PageSection = ({ sectionDetails, button }) => {
                 color: "grey.lighHover",
               }}
             >
-              {/* {subtitle} */}
               {subtitles.map((char, idx) => (
                 <motion.span
                   key={idx}
@@ -71,7 +80,6 @@ const PageSection = ({ sectionDetails, button }) => {
             display: { md: "block", xs: "none" },
             margin: "15px auto",
             textAlign: "center",
-            // width: "630.41px",
             width: "100%",
           }}
         >
