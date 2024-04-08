@@ -42,11 +42,11 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   const router = useRouter();
-  const { title, content, featuredImage } = post;
+  // const { title, content, featuredImage } = post;
   const seoData = {
-    title: title,
-    description: truncateContent(content.html, 40),
-    ogImage: featuredImage.url,
+    title: post.title,
+    description: truncateContent(post.content.html, 40),
+    ogImage: post.featuredImage.url,
   };
   console.log(seoData);
 
