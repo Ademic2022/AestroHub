@@ -42,12 +42,13 @@ export async function getStaticProps({ params }) {
 
 const BlogDetails = ({ post, allPosts }) => {
   const router = useRouter();
-  // const { title, content, featuredImage } = post;
-  // const seoData = {
-  //   title: title,
-  //   description: truncateContent(content.html, 40),
-  //   ogImage: featuredImage.url,
-  // };
+  const { title, content, featuredImage } = post;
+  const seoData = {
+    title: title,
+    description: truncateContent(content.html, 40),
+    ogImage: featuredImage.url,
+  };
+  console.log(seoData);
 
   if (router.isFallback) {
     return (
