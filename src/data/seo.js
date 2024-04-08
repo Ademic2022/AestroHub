@@ -1,5 +1,6 @@
 export const indexSeo = {
   title: "Aestrohub",
+  ogImage:"/images/logo.png",
   keywords: [
     "Aestrohub",
     "Explore our station",
