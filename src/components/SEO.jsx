@@ -16,9 +16,9 @@ const SEO = ({ data }) => {
       />
       {/* Twitter Card metadata */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={ogImage ? ogImage : "/images/logo.png"} />
+      <meta name="twitter:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logo.png"} />
       {/* Open Graph metadata */}
-      <meta property="og:image" content={ogImage ? ogImage : "/images/logo.png"} />
+      <meta property="og:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logo.png"} />
       {keywords && <meta name="keywords" content={keywords.join(",")} />}
     </Head>
   );
