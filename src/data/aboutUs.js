@@ -71,19 +71,19 @@ export const team = [
   {
     id: 1,
     title: "Tripple A",
-    img: "/avatars/male.webp",
+    img: "/avatars/admin3.webp",
     desc: "Meet our visionary founder, who is leading the charge in revolutionizing the web3 landscape. With a deep passion for blockchain technology and a relentless drive for innovation, he is dedicated to shaping the process of building both physical and digital products.",
   },
   {
     id: 2,
     title: "James",
-    img: "/avatars/man.webp",
+    img: "/avatars/admin1.webp",
     desc: "Joining forces with the founder is our esteemed co-founder, James. With a background in product development, he brings a wealth of knowledge and experience to our team, driving our mission to empower individuals and businesses in the web3 ecosystem.",
   },
   {
     id: 3,
     title: "OPD",
-    img: "/avatars/man1.webp",
+    img: "/avatars/admin2.webp",
     desc: "Our community is at the heart of everything we do. Led by our dedicated community manager, we strive to foster an inclusive and engaging environment where members can connect, learn, and grow together. Join us and be a part of the web3 revolution!",
   },
 ];

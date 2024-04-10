@@ -54,9 +54,9 @@ const ResponsiveNavBar = (props) => {
       <Box sx={{ flexGrow: 1 }} component={Link} href="/">
         <CardMedia
           component="img"
-          image="/images/logo.webp"
+          image="/images/logoDark.png"
           alt="Logo"
-          sx={{ width: "150px", height: "60px", my: 0, objectFit: "cover" }}
+          sx={{ width: "100%", height: "60px", my: 0, objectFit: "cover" }}
         />
       </Box>
       <Divider />
