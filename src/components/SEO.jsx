@@ -17,9 +17,9 @@ const SEO = ({ data }) => {
       {/* Twitter Card metadata */}
       <meta name="google-site-verification" content="SbVMh0psBIXLjlZu3PF6c9xNQtj1uw993CesXz-sPxE" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logo.png"} />
+      <meta name="twitter:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logoDark.png"} />
       {/* Open Graph metadata */}
-      <meta property="og:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logo.png"} />
+      <meta property="og:image" content={ogImage ? ogImage : "https://aestrohub.vercel.app/images/logoDark.png"} />
       {keywords && <meta name="keywords" content={keywords.join(",")} />}
     </Head>
   );
