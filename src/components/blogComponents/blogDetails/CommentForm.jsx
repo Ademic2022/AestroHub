@@ -46,7 +46,7 @@ const CommentForm = ({ slug }) => {
       localStorage.setItem("name", data.name);
       localStorage.setItem("email", data.email);
     } else {
-      localStorage.clear()
+      localStorage.clear();
     }
 
     try {
@@ -68,7 +68,7 @@ const CommentForm = ({ slug }) => {
       console.error("Error creating comment:", error);
     } finally {
       setLoading(false);
-      reset()
+      reset();
     }
   };
   React.useEffect(() => {

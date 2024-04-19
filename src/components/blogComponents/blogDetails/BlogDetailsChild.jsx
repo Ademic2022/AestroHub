@@ -70,7 +70,7 @@ const BlogDetailsChild = ({ post }) => {
             width: "100%",
             bgcolor: alpha("#fff", 0.3),
             mt: 7,
-            mb:5,
+            mb: 5,
             p: "0 12px 20px ",
             position: "relative",
             borderRadius: "12px",
@@ -111,9 +111,7 @@ const BlogDetailsChild = ({ post }) => {
               fontSize: { xs: "14px", md: "18px" },
             }}
           >
-            {author.bio
-              ? author.bio
-              : "Alabi Damilare is an accomplished author known for his captivating storytelling across various genres. With a keen eye for detail and a gift for crafting compelling narratives, Damilare's works resonate with readers, leaving a lasting impact..."}
+            {author.bio ? author.bio : ""}
           </Typography>
         </Box>
         {/* comments */}
