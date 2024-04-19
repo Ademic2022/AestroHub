@@ -16,9 +16,6 @@ const AboutCard = ({ datas }) => {
             <ScrollReveal index={idx}>
               <Box
                 sx={{
-                  // display: "flex",
-                  // justifyContent: "center",
-                  // alignItems: "flex-start",
                   p: { xs: 1, md: 3 },
                   flexDirection: "column",
                   bgcolor: alpha("#fff", 0.1),
@@ -38,31 +35,10 @@ const AboutCard = ({ datas }) => {
                   }}
                   alt="icon"
                 />
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    bgcolor: alpha("#fff", 0.4),
-                    p: 1,
-                    borderRadius: "50%",
-                    width: "40px",
-                    height: "40px",
-                  }}
-                >
-                  <Typography
-                    variant="body"
-                    sx={{
-                      fontSize: { xs: "10px", md: "20px", bgcolor: "#fff" },
-                    }}
-                  >
-                    {`0${project.id}`}
-                  </Typography>
-                </Box>
                 <Typography
                   my={{ xs: 1, md: 4 }}
                   variant="body"
-                  sx={{ fontSize: { xs: "32px", md: "56px", } }}
+                  sx={{ fontSize: { xs: "32px", md: "56px" } }}
                 >
                   {project.title}
                 </Typography>
