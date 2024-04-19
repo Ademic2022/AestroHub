@@ -8,6 +8,7 @@ const Home = () => {
       " Making liquidity and funding accessible to founders and project owners. Embrace a dynamic system of funding across different channels.  ",
     btnText: "Coming Soon",
     img: "images/launch.webp",
+    destination:"#",
     config: {
       img: {
         height: "400px",

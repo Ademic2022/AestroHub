@@ -45,8 +45,7 @@ const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
                   {project.title}
                 </Typography>
                 <Typography
-                  my={2}
-                  px={5}
+                  px={{ xs: 3, md: 1.5 }}
                   variant="body2"
                   sx={{
                     fontSize: { xs: "15px", md: "18px" },
