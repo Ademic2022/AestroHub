@@ -2,6 +2,7 @@ import React from "react";
 import { alpha } from "@mui/system";
 import { Box, Grid, Typography, CardMedia } from "@mui/material";
 import ScrollReveal from "@/utils/motion/ScrollReveal";
+import Link from "next/link";
 
 const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
   return (
@@ -11,8 +12,8 @@ const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 1, sm: 8, md: 12 }}
       >
-        {datas.map((project, idx) => (
-          <Grid item xs={2} sm={4} md={4} key={project.id}>
+        {datas.map((team, idx) => (
+          <Grid item xs={2} sm={4} md={4} key={team.id}>
             <ScrollReveal type={animationDirection} index={idx}>
               <Box
                 sx={{
@@ -28,7 +29,7 @@ const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
               >
                 <CardMedia
                   component="img"
-                  image={project.img}
+                  image={team.img}
                   sx={{
                     borderRadius: "50%",
                     width: "120px",
@@ -37,13 +38,15 @@ const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
                   }}
                   alt="icon"
                 />
-                <Typography
-                  my={2}
-                  variant="body"
-                  sx={{ fontSize: { xs: "15px", md: "25px" } }}
-                >
-                  {project.title}
-                </Typography>
+                  <Typography
+                    component={Link}
+                    href={`${team.socialLink}`}
+                    my={2}
+                    variant="body"
+                    sx={{ fontSize: { xs: "15px", md: "25px" } }}
+                  >
+                    {team.name}
+                  </Typography>
                 <Typography
                   px={{ xs: 3, md: 1.5 }}
                   variant="body2"
@@ -52,7 +55,7 @@ const AboutCard1 = ({ cardHeight, datas, animationDirection }) => {
                     color: "#D0D0D0",
                   }}
                 >
-                  {project.desc}
+                  {team.desc}
                 </Typography>
               </Box>
             </ScrollReveal>
