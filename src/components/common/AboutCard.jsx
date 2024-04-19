@@ -19,10 +19,10 @@ const AboutCard = ({ datas }) => {
                   // display: "flex",
                   // justifyContent: "center",
                   // alignItems: "flex-start",
-                  p: { xs: 1, md: 8 },
+                  p: { xs: 1, md: 3 },
                   flexDirection: "column",
                   bgcolor: alpha("#fff", 0.1),
-                  height: "412px",
+                  height: "312px",
                   borderRadius: "20px",
                   border: "1px solid #5c5c5c",
                 }}
