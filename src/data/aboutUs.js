@@ -3,7 +3,7 @@ export const items1 = [
     id: 1,
     title: "Our Mission",
     icon: "/icons/Jupiter.webp",
-    desc: "To help individuals, businesses and corporate entities in providing resources that is required to bring their ideas to life  by reducing  the time spent in gathering and having access to talents, collaborations and funding.",
+    desc: "To help individuals and businesses with resources that are needed to bring their ideas to life by reducing the time spent in getting talents, collaborations, and funding.",
   },
   {
     id: 2,
