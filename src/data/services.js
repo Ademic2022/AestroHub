@@ -93,7 +93,7 @@ export const managements = [
     id: 1,
     title: "Project & Product Management",
     img: "/icons/pyramid.webp",
-    desc: "We drive successful project outcomes and product launches with effective planning, execution, and team coordination. Try us today...",
+    desc: "We drive successful project outcomes and product launches with effective planning, execution, and team coordination.",
   },
   {
     id: 2,
@@ -120,7 +120,7 @@ export const developments = [
     id: 2,
     title: "Product Development",
     img: "/icons/mask.webp",
-    desc: "We bring your ideas to life with innovative product design, development, and testing, ensuring high-quality products that meet customer needs and market demands. Including games, virtual worlds, websites, and other products.",
+    desc: "We bring your ideas to life with innovative product design, development, and testing, ensuring high-quality products that meet customer needs and market demands.",
   },
   {
     id: 3,

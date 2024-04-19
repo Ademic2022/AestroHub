@@ -21,22 +21,17 @@ const Card = ({ datas }) => {
                   alignItems: "center",
                   flexDirection: "column",
                   bgcolor: alpha("#fff", 0.1),
-                  height: "450px",
+                  height: { xs: "412px", md: "450px" },
                   borderRadius: "20px",
                   border: "1px solid #5c5c5c",
                 }}
               >
                 <Box
                   sx={{
-                    // display: "flex",
-                    // justifyContent: "center",
-                    // alignItems: "center",
-                    p:4,
-                    // width: "153px",
-                    // height: "153px",
                     bgcolor: alpha("#fff", 0.3),
                     borderRadius: "50%",
-                    mb:1,
+                    p: 4,
+                    mb: 1,
                   }}
                 >
                   <CardMedia
@@ -47,7 +42,6 @@ const Card = ({ datas }) => {
                   />
                 </Box>
                 <Typography
-                  // my={2}
                   variant="body"
                   sx={{ fontSize: { xs: "15px", md: "25px" } }}
                 >
