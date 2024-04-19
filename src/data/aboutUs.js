@@ -15,13 +15,13 @@ export const items1 = [
     id: 3,
     title: "The Problem",
     icon: "/icons/Mars.webp",
-    desc: "The lack of accessible organized knowledge  to innovate and create is a major problem in web3 and other ecosystem as well.  Numerous ideas that can change the world because of lack of resources has failed to be expressed.",
+    desc: "The lack of accessible organized knowledge to innovate and build products is a major problem. Ideas that can change the world because of a lack of resources have not been expressed.",
   },
   {
     id: 4,
     title: "The Solution",
     icon: "/icons/Sun.webp",
-    desc: "Our main aim is to promote self-expression by providing talents and other resources required to build any product.  We also reduce the barriers in looking for different professionals before building a product.",
+    desc: "To promote self-expression by providing talents, different professionals, and other resources required to build any product in a single place.",
   },
 ];
 

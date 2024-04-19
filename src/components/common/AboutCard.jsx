@@ -16,9 +16,9 @@ const AboutCard = ({ datas }) => {
             <ScrollReveal index={idx}>
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "flex-start",
+                  // display: "flex",
+                  // justifyContent: "center",
+                  // alignItems: "flex-start",
                   p: { xs: 1, md: 8 },
                   flexDirection: "column",
                   bgcolor: alpha("#fff", 0.1),
