@@ -72,7 +72,7 @@ export const team = [
     id: 1,
     title: "Tripple A",
     img: "/avatars/admin3.webp",
-    desc: "Meet our visionary founder, who is leading the charge in revolutionizing the web3 landscape. With a deep passion for blockchain technology and a relentless drive for innovation, he is dedicated to shaping the process of building both physical and digital products.",
+    desc: "Meet our visionary founder, who is leading the charge in revolutionizing the web3 landscape. With a deep passion for blockchain technology and a relentless drive for innovation, he is dedicated to shaping the process of building useful products.",
   },
   {
     id: 2,

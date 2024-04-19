@@ -61,7 +61,7 @@ export const marketing = [
   },
   {
     id: 3,
-    title: "SEO and Content Marketing",
+    title: "SEO",
     img: "/icons/pill.webp",
     desc: "Boost your website's visibility  with strategic keyword research, on-page optimization, content creation, and effective link-building strategies.",
   },
