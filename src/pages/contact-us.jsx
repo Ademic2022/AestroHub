@@ -230,7 +230,7 @@ const ContactUs = () => {
                 <TextField
                   id="standard-basic"
                   label="Your Budget ($)"
-                  {...register("budget", numberValidator)}
+                  {...register("budget", {...numberValidator, required:false})}
                   error={!!errors.budget}
                   helperText={!!errors.budget ? errors.budget.message : ""}
                   variant="standard"
