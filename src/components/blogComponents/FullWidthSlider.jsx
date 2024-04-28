@@ -22,7 +22,7 @@ import Link from "next/link";
 const FullWidthSlider = ({ latestPost }) => {
   // Determine the number of words to truncate based on screen size
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  const truncateLength = isMobile ? 15 : 25;
+  const truncateLength = isMobile ? 15 : 45;
 
   const { slug, title, createdAt, content, author, featuredImage } = latestPost;
   const truncatedSummary = truncateContent(content.html, truncateLength);
@@ -89,11 +89,7 @@ const FullWidthSlider = ({ latestPost }) => {
             />
           </Link>
           <Box>
-            <Grid
-              container
-              direction={{ xs: "column-reverse", md: "row" }}
-              spacing={{ xs: 0, md: 2 }}
-            >
+            <Grid container direction="column" spacing={{ xs: 0, md: 2 }}>
               <Grid
                 container
                 item
@@ -104,13 +100,56 @@ const FullWidthSlider = ({ latestPost }) => {
                 alignItems="flex-start"
                 m={{ xs: "0px 5px 5px", md: "0" }}
               >
+                {isMobile && (
+                  <ListItem alignItems="center">
+                    <ListItemAvatar>
+                      <Avatar
+                        alt={author.name}
+                        src={author.photo.url}
+                        sx={{ height: "60px", width: "60px" }}
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      sx={{ pl: 3 }}
+                      primary={
+                        <Typography
+                          variant="customBody"
+                          color="#fff"
+                          textAlign="left"
+                          sx={{ fontSize: { xs: 17, md: 22 } }}
+                        >
+                          {capitalizeWords(author.name)}
+                        </Typography>
+                      }
+                      secondary={
+                        <Typography
+                          sx={{
+                            textAlign: "left",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "flex-start",
+                            gap: 1,
+                            fontSize: { xs: 15, md: 20 },
+                            color: "grey.lightActive",
+                          }}
+                        >
+                          <span style={{ marginTop: "3px" }}>
+                            <FaCalendarAlt />
+                          </span>
+                          <span>{formatBlogDate(createdAt)}</span>
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                )}
                 <Typography
                   gutterBottom
                   variant="customBody"
                   textAlign="left"
+                  lineHeight={1.2}
                   sx={{
-                    fontSize: { xs: "32", md: "36px" },
-                    marginY: { xs: 0, md: 2 },
+                    fontSize: { xs: "30", md: "30px" },
+                    marginY: { xs: 0, md: 1 },
                   }}
                 >
                   <Link
@@ -120,58 +159,68 @@ const FullWidthSlider = ({ latestPost }) => {
                     {title}
                   </Link>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  textAlign="left"
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Box
                   sx={{
-                    color: "grey.lightActive",
-                    fontSize: { xs: "15px", md: "20px" },
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
                   }}
                 >
-                  {truncatedSummary}
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={6} mt={{ xs: 0, md: 4 }}>
-                <ListItem alignItems="center">
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={author.name}
-                      src={author.photo.url}
-                      sx={{ height: "60px", width: "60px" }}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText
-                    sx={{ pl: 3 }}
-                    primary={
-                      <Typography
-                        variant="customBody"
-                        color="#fff"
-                        textAlign="left"
-                        sx={{ fontSize: { xs: 17, md: 22 } }}
-                      >
-                        {capitalizeWords(author.name)}
-                      </Typography>
-                    }
-                    secondary={
-                      <Typography
-                        sx={{
-                          textAlign: "left",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "flex-start",
-                          gap: 1,
-                          fontSize: { xs: 15, md: 20 },
-                          color: "grey.lightActive",
-                        }}
-                      >
-                        <span style={{ marginTop: "3px" }}>
-                          <FaCalendarAlt />
-                        </span>
-                        <span>{formatBlogDate(createdAt)}</span>
-                      </Typography>
-                    }
-                  />
-                </ListItem>
+                  <Typography
+                    variant="body2"
+                    textAlign="left"
+                    mb={1}
+                    sx={{
+                      color: "grey.lightActive",
+                      fontSize: { xs: "15px", md: "20px" },
+                    }}
+                  >
+                    {truncatedSummary}
+                  </Typography>
+                  {!isMobile && (
+                    <ListItem alignItems="center">
+                      <ListItemAvatar>
+                        <Avatar
+                          alt={author.name}
+                          src={author.photo.url}
+                          sx={{ height: "60px", width: "60px" }}
+                        />
+                      </ListItemAvatar>
+                      <ListItemText
+                        sx={{ pl: 3 }}
+                        primary={
+                          <Typography
+                            variant="customBody"
+                            color="#fff"
+                            textAlign="left"
+                            sx={{ fontSize: { xs: 17, md: 22 } }}
+                          >
+                            {capitalizeWords(author.name)}
+                          </Typography>
+                        }
+                        secondary={
+                          <Typography
+                            sx={{
+                              textAlign: "left",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "flex-start",
+                              gap: 1,
+                              fontSize: { xs: 15, md: 20 },
+                              color: "grey.lightActive",
+                            }}
+                          >
+                            <span style={{ marginTop: "3px" }}>
+                              <FaCalendarAlt />
+                            </span>
+                            <span>{formatBlogDate(createdAt)}</span>
+                          </Typography>
+                        }
+                      />
+                    </ListItem>
+                  )}
+                </Box>
               </Grid>
             </Grid>
           </Box>
