@@ -217,13 +217,12 @@ const ContactUs = () => {
                 <TextField
                   id="standard-basic"
                   label="Your Company"
-                  {...register("companyName", nameValidator)}
+                  {...register("companyName", {...nameValidator, required:false })}
                   error={!!errors.companyName}
                   helperText={
                     !!errors.companyName ? errors.companyName.message : ""
                   }
                   variant="standard"
-                  required
                   fullWidth
                 />
               </Grid>
@@ -235,7 +234,6 @@ const ContactUs = () => {
                   error={!!errors.budget}
                   helperText={!!errors.budget ? errors.budget.message : ""}
                   variant="standard"
-                  required
                   fullWidth
                 />
               </Grid>
