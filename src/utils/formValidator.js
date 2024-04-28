@@ -48,6 +48,6 @@ export const numberValidator = {
   required: "This field is required",
   pattern: {
     value: /^\d+$/,
-    message: "Please enter a valid number",
+    message: "Numbers only, don't include signs(#,$,€,¥)",
   },
 };
