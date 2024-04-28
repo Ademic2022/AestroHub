@@ -171,7 +171,7 @@ export const padservices = [
     title: "Early Access",
     bgImage: "/images/image12.webp",
     description:
-      "Looking for the next rocket going to the moon,  secure your sit as an early investor though Aestropad to find the next web3 gem.",
+      "Looking for the next rocket going to the moon, secure your seat as an early investor through AestroPad to find the next web3 gem.",
   },
   {
     id: 4,
