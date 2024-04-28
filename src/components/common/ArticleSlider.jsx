@@ -8,6 +8,7 @@ import {
   Chip,
   CardContent,
   Card,
+  useMediaQuery,
 } from "@mui/material";
 import { alpha } from "@mui/system";
 import { FaUserTie } from "react-icons/fa6";
@@ -16,12 +17,14 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import Link from "next/link";
 import { responsive } from "@/data/CarouselResponsive";
-import { truncateContent } from "@/utils/postTruncator";
+import { truncatePostCardContent } from "@/utils/postTruncator";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
 import Reveal from "@/utils/motion/Reveal";
 
 const ArticleSlider = ({ articles, props }) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const wordCount = isMobile ? 20 : 10;
   return (
     <React.Fragment>
       <Reveal>
@@ -73,8 +76,7 @@ const ArticleSlider = ({ articles, props }) => {
           {articles.map((article, index) => {
             const { slug, title, createdAt, content, author, featuredImage } =
               article;
-            const truncatedSummary = truncateContent(content.html);
-
+            const {truncatedTitle, truncatedContent} = truncatePostCardContent(title, content.html, 15);
             return (
               <Card
                 key={index}
@@ -84,7 +86,7 @@ const ArticleSlider = ({ articles, props }) => {
                   bgcolor: alpha("#fff", 0.1),
                   border: "1px solid #5c5c5c",
                   borderRadius: "16px",
-                  maxHeight: "580px",
+                  minHeight: { xs: "", md: "580px" },
                 }}
               >
                 <CardMedia
@@ -134,20 +136,22 @@ const ArticleSlider = ({ articles, props }) => {
                   <Typography
                     pt={{ xs: 0.5, md: 3 }}
                     textAlign="left"
+                    lineHeight={1.5}
                     gutterBottom
                     variant="body"
                     component="div"
-                    sx={{ fontSize: { xs: 18, md: 22 } }}
+                    sx={{ fontSize: { xs: 10, md: 15 } }}
                   >
-                    {title}
+                    {truncatedTitle}
                   </Typography>
                   <Typography
                     variant="body2"
                     textAlign="left"
                     color="#D0D0D0"
-                    sx={{ fontSize: { xs: 14, md: 18 } }}
+                    lineHeight={{xs:1.2, md:""}}
+                    sx={{ fontSize: { xs: 10, md: 18 } }}
                   >
-                    {truncatedSummary}
+                    {truncatedContent}
                   </Typography>
                 </CardContent>
                 <CardActions>
