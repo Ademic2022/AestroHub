@@ -12,7 +12,7 @@ export const truncateContent = (content, len) => {
 
 export const truncatePostCardContent = (title, content, len) => {
   const word = len ? len : 10;
-  const totalCounts = 28;
+  const totalCounts = 27;
   const strippedtitle = title.replace(/<[^>]+>/g, "");
   const strippedContent = content.replace(/<[^>]+>/g, "");
   const contentCounts = strippedContent.split(" ");
