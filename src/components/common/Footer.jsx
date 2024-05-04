@@ -218,7 +218,7 @@ const Footer = () => {
               display: { md: "block", xs: "none" },
               position: "absolute",
               top: { xs: 500, md: 0 },
-              right: { xs: "20px", md: "90px" },
+              left: { xs: "20px", md: "726px" },
               height: { xs: "840px", md: "1040px" },
               objectFit: "cover",
               width: { xs: "300px", md: "580px" },

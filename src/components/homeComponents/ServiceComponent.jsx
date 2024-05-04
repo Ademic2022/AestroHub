@@ -53,7 +53,7 @@ const ServiceComponent = () => {
       {/* desktop or larger devices */}
       <Box
         sx={{
-          display: { xs: "none", md: "flex" },
+          display: { xs: "none", md: "flex"},
           flexDirection: "column",
           gap: "20px",
           borderRadius: "40px",

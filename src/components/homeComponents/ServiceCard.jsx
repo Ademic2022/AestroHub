@@ -1,10 +1,4 @@
-import {
-  Typography,
-  Card,
-  CardContent,
-  Box,
-  Chip,
-} from "@mui/material";
+import { Typography, Card, CardContent, Box, Chip } from "@mui/material";
 import CustomButton from "../common/CustomButton";
 
 const ServiceCard = ({ data, button }) => {
@@ -17,8 +11,9 @@ const ServiceCard = ({ data, button }) => {
         flexDirection: { xs: "column", md: "row" },
         marginBottom: "20px",
         border: "1px solid #5c5c5c",
-        height: { xs: "auto", md: "330px" },
+        height: { xs: "auto", md: "330px", sm: "380px" },
         borderRadius: "20px",
+        marginX: { sm: "10px" },
       }}
     >
       <CardContent>

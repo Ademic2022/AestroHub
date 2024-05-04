@@ -17,7 +17,7 @@ const Company = () => {
         </Typography>
       </Box>
       <Box
-        display={{ xs: "none", md: "flex" }}
+        display={{ xs: "none", md: "flex", sm:"flex" }}
         alignItems="center"
         gap={4}
         p={2}
@@ -52,12 +52,12 @@ const Company = () => {
       </Box>
       {/* mobile view */}
       <Box
-        display={{ xs: "flex", md: "none" }}
+        display={{ xs: "flex", md: "none", sm:"none" }}
         alignItems="center"
         justifyContent="center"
       >
         <Box
-          display={{ xs: "flex", md: "none" }}
+          display={{ xs: "flex", md: "none", sm:"none" }}
           alignItems="center"
           flexDirection="column"
           gap={4}

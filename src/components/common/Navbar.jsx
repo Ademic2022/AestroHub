@@ -133,7 +133,7 @@ const ResponsiveNavBar = (props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 1, display: { sm: "none" } }}
+            sx={{ mr: 1, display: { sm: "block", md:"none" } }}
           >
             <Box
               sx={{
@@ -151,7 +151,7 @@ const ResponsiveNavBar = (props) => {
 
           <Box
             sx={{
-              display: { xs: "none", sm: "flex" },
+              display: { xs: "none", sm: "none", md:"flex" },
               alignItems: "center",
               bgcolor: alpha("#000", 0.05),
               border: "0.1px solid #5c5c5c",
@@ -212,7 +212,7 @@ const ResponsiveNavBar = (props) => {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", sm: "block", md:"none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

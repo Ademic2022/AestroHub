@@ -39,7 +39,7 @@ const Section7 = ({ title, bgcolor, bottomText }) => {
           <Typography
             variant="h2"
             width={{ xs: "100%", md: "60%" }}
-            sx={{ fontSize: { xs: 10, md: 44 } }}
+            sx={{ fontSize: { xs: 10, md: 44, sm:30 } }}
           >
             {title ? title : ".... Made by you, delivered by us ...."}
           </Typography>
