@@ -99,6 +99,7 @@ const Offering = () => {
                     sx={{
                       fontSize: { xs: "16px", md: "22px" },
                       fontWeight: 400,
+                      textShadow: "1px 1px 2px rgba(0, 0, 0, 5)"
                     }}
                   >
                     We offer one-man and one-time service for your project. We
@@ -165,6 +166,7 @@ const Offering = () => {
                     sx={{
                       fontSize: { xs: "16px", md: "22px" },
                       fontWeight: 400,
+                      textShadow: "1px 1px 2px rgba(0, 0, 0, 5)"
                     }}
                   >
                     We offer cross-functional skills handled by the entire team
