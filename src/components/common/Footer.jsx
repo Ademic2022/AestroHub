@@ -215,10 +215,10 @@ const Footer = () => {
           </Box>
           <CardMedia
             sx={{
-              display: { md: "block", xs: "none" },
+              display: { md: "block", xs: "none", sm: "block" },
               position: "absolute",
               top: { xs: 500, md: 0 },
-              left: { xs: "20px", md: "726px" },
+              left: { xs: "20px", md: "726px", sm: "400px" },
               height: { xs: "840px", md: "1040px" },
               objectFit: "cover",
               width: { xs: "300px", md: "580px" },
