@@ -14,7 +14,7 @@ export const projects = [
   {
     id: 3,
     title: "GameFI Project",
-    desc: "Join the GameFi revolution us. Whether you're developing a new game or integrating blockchain technology into existing games.",
+    desc: "Join the GameFi revolution with us. Whether you're developing a new game or integrating blockchain technology into existing games.",
     img: "/icons/flash.webp",
   },
   {
