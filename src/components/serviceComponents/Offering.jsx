@@ -100,7 +100,7 @@ const Offering = () => {
                   >
                     We offer one-man and one-time service for your project. We
                     monitor and ensure full delivery of the service. Get a
-                    single professionals to work on your specific needs.
+                    single professional to work on your specific needs.
                   </Typography>
                   <Box
                     component="ul"
