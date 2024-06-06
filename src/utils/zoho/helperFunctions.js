@@ -1,6 +1,17 @@
 // Function to check if the access token has expired
 export const isTokenExpired = (tokenData) => {
   // Extract data and expires_in from tokenData
+  if (!tokenData){
+    // If tokenData is missing, attempt to refresh the access token
+    return refreshAccessToken().then((newTokenData) => {
+      // After refreshing, recursively call isTokenExpired with the new token data
+      return isTokenExpired(newTokenData);
+    }).catch((error) => {
+      console.error("Failed to refresh access token:", error);
+      return true; // Unable to refresh token, consider it expired
+    });
+  }
+  
   const { data, creation_time } = tokenData;
   const { expires_in } = data;
 

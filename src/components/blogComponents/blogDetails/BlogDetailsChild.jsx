@@ -15,7 +15,10 @@ import Comments from "./Comments";
 
 const BlogDetailsChild = ({ post }) => {
   const { slug, title, createdAt, content, author, featuredImage } = post;
-
+  const formattedContent = content.html
+  .replace(/<p><strong><\/strong><\/p>/g, '<br/>')
+  .replace(/<p><\/p>/g, '<br/>');
+  
   return (
     <React.Fragment>
       <Box
@@ -60,9 +63,9 @@ const BlogDetailsChild = ({ post }) => {
           component="div"
           textAlign="left"
           color="#fff"
-          // fontSize={23}
+          fontSize={20}
           lineHeight={1.5}
-          dangerouslySetInnerHTML={{ __html: content.html }}
+          dangerouslySetInnerHTML={{ __html: formattedContent }}
         />
         <Box
           sx={{
