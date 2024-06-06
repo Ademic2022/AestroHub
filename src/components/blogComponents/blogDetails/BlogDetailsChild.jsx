@@ -66,6 +66,7 @@ const BlogDetailsChild = ({ post }) => {
           fontSize={20}
           lineHeight={1.5}
           dangerouslySetInnerHTML={{ __html: formattedContent }}
+          sx={{ fontFamily: 'Roboto, sans-serif' }}
         />
         <Box
           sx={{
