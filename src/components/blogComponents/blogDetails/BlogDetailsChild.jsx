@@ -6,12 +6,23 @@ import {
   Typography,
   CardMedia,
   alpha,
+  styled,
 } from "@mui/material";
 import { FaCalendarAlt } from "react-icons/fa";
 import { capitalizeWords } from "@/utils/capitalizeWord";
 import { formatBlogDate } from "@/utils/dateFormatter";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  "& img": {
+    maxWidth: "100%",
+    height: "auto",
+    display: "block",
+    margin: "0 auto",
+    borderRadius:"12px",
+  },
+}));
 
 const BlogDetailsChild = ({ post }) => {
   const { slug, title, createdAt, content, author, featuredImage } = post;
@@ -49,17 +60,19 @@ const BlogDetailsChild = ({ post }) => {
           <span>{formatBlogDate(createdAt)}</span>
         </Typography>
         <CardMedia
+          component="img"
           sx={{
-            height: { xs: "250px", md: "520px" },
+            height: { xs: "auto", md: "520px" },
+            width:"100%",
             borderRadius: "16px",
-            objectFit: "cover",
-            my: 3,
+            objectFit: {xs:"contain", md:"cover"},
+            my:{xs:1, md:3}
           }}
           image={featuredImage.url}
           alt="Blog Img"
           title="Article Image"
         />
-        <Box
+        <StyledBox
           component="div"
           textAlign="left"
           color="#fff"
@@ -95,7 +108,12 @@ const BlogDetailsChild = ({ post }) => {
             <Avatar
               alt={author.name}
               src={author.photo.url}
-              sx={{ height: "80px", width: "80px" }}
+              sx={{
+                height: "80px",
+                width: "80px",
+                border: "3px solid #fff",
+                boxSizing: "content-box",
+              }}
             />
           </ListItemAvatar>
           <Typography
