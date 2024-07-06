@@ -76,7 +76,8 @@ const ArticleSlider = ({ articles, props }) => {
           {articles.map((article, index) => {
             const { slug, title, createdAt, content, author, featuredImage } =
               article;
-            const {truncatedTitle, truncatedContent} = truncatePostCardContent(title, content.html, 15);
+            const { truncatedTitle, truncatedContent } =
+              truncatePostCardContent(title, content.html, 15);
             return (
               <Card
                 key={index}
@@ -86,12 +87,13 @@ const ArticleSlider = ({ articles, props }) => {
                   bgcolor: alpha("#fff", 0.1),
                   border: "1px solid #5c5c5c",
                   borderRadius: "16px",
-                  minHeight: { xs: "", md: "580px" },
+                  minHeight: { xs: "400px", md: "580px" },
                 }}
               >
                 <CardMedia
+                  component="img"
                   sx={{
-                    height: { xs: "218px", md: "318px" },
+                    maxHeight: { xs: "218px", md: "318px" },
                     borderRadius: "16px",
                   }}
                   image={featuredImage.url}
@@ -148,7 +150,7 @@ const ArticleSlider = ({ articles, props }) => {
                     variant="body2"
                     textAlign="left"
                     color="#D0D0D0"
-                    lineHeight={{xs:1.2, md:""}}
+                    lineHeight={{ xs: 1.2, md: "" }}
                     sx={{ fontSize: { xs: 10, md: 18 } }}
                   >
                     {truncatedContent}
@@ -164,6 +166,9 @@ const ArticleSlider = ({ articles, props }) => {
                       bgcolor: "#0EAD69",
                       borderRadius: "16px",
                       color: "#fff",
+                      "&:hover": {
+                        border: "2px solid #0EAD69",
+                      },
                     }}
                   >
                     Read More

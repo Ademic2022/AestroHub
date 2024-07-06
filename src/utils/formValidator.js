@@ -44,6 +44,15 @@ export const textFieldValidator = {
   },
 };
 
+export const commentValidator = {
+  required: "This field is required",
+  minLength: {
+    value: 5,
+    message: "Comment must be at least 5 characters",
+  },
+};
+
+
 export const numberValidator = {
   required: "This field is required",
   pattern: {
