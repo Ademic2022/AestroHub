@@ -17,7 +17,7 @@ import CustomToast from "@/components/common/CustomToast";
 import {
   nameValidator,
   emailValidator,
-  textFieldValidator,
+  commentValidator,
 } from "@/utils/formValidator";
 
 const CommentForm = ({ slug }) => {
@@ -103,9 +103,9 @@ const CommentForm = ({ slug }) => {
           <Grid item xs={12}>
             <TextField
               label="Comment"
-              {...register("comment", textFieldValidator)}
-              error={!!errors.company}
-              helperText={!!errors.company ? errors.company.message : ""}
+              {...register("comment", commentValidator)}
+              error={!!errors.comment}
+              helperText={!!errors.comment ? errors.comment.message : ""}
               multiline
               rows={3}
               variant="outlined"
